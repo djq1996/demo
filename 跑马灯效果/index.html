@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>跑马灯效果</title>
+<style>
+*{ margin:0; padding:0;}
+#red_v{ width:238px; height:238px; background:url(v.png) center center no-repeat; margin:200px auto; position:relative;}
+#white_v{ width:146px; height:146px; background:#e51839 url(v_h.png) -7px -31px no-repeat; overflow:hidden; border-radius:146px; position:absolute; top:31px; left:7px;}
+</style>
+</head>
+
+<body>
+<div id="red_v">
+	<div id="white_v"></div>
+</div>
+<script>
+window.onload = function(){
+	var _w = parseInt(getStyle(document.getElementById("red_v"),"width"));
+	var _w_white = parseInt(getStyle(document.getElementById("white_v"),"width"));
+	var d=270;
+	var deg =d*Math.PI/180;
+	
+	var b = (_w-_w_white)/2/Math.sin(Math.PI/4)/1.7;
+	
+	
+	setInterval(function(){
+		
+		deg =d*Math.PI/180;
+		var _x = (_w-_w_white)/2+b*Math.sin(deg);
+		var _y = (_w-_w_white)/2+b*Math.cos(deg)-15;
+		
+		document.getElementById("white_v").style.top = _y+"px";
+		document.getElementById("white_v").style.left = _x+"px";
+		document.getElementById("white_v").style.backgroundPosition = -_x+"px "+-_y+"px";
+		d=d+4;
+	},50)
+	
+	
+}
+function getStyle(obj, attr){
+	if(obj.currentStyle){
+		return obj.currentStyle[attr];
+	}else{
+		return getComputedStyle(obj, false)[attr];
+	}
+}
+</script>
+</body>
+</html>

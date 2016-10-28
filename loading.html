@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loading</title>
+	<style>
+		#area,#area2,#area3{
+			width: 160px;
+			height: 160px;
+			background: #eee;
+			position: relative;
+			float: left;
+			margin-left: 50px;
+		}
+		.con{
+			width: 50px;
+			height: 50px;
+			border-bottom-left-radius:48%;
+			border-bottom-right-radius:48%;
+			background: -webkit-linear-gradient(top,transparent 80%, #000 81%,#000);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -16px;
+			margin-top: -16px;
+			transform-origin: 50% 50%;
+			animation: run 1s linear infinite;
+		}
+		.con2,.con3{
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -40px;
+			margin-top: -40px;
+		}
+		.con2{
+			margin-top: -16px;
+		}
+		.con2 i{
+			width: 5px;
+			height: 30px;
+			background: black;
+			margin-left: 5px;
+			display: inline-block;
+		}
+		.con2 i:nth-child(1){
+			animation: go 1s linear 0.2s infinite;
+		}
+		.con2 i:nth-child(2){
+			animation: go 1s linear 0.4s infinite;
+		}
+		.con2 i:nth-child(3){
+			animation: go 1s linear 0.6s infinite;
+		}
+		.con2 i:nth-child(4){
+			animation: go 1s linear 0.8s infinite;
+		}
+		.con3 i{
+			width: 10px;
+			height: 10px;
+			border-radius: 50px;
+			background: #ddd;
+			display: inline-block;
+			position: absolute;
+		}
+		.con3 i:nth-child(1){
+			left: 46%;
+			top: 0%;
+			-webkit-animation:move 2s linear 0.2s infinite;
+		}
+		.con3 i:nth-child(2){
+			right: 14%;
+			top: 14%;
+			-webkit-animation:move 2s linear 0.4s infinite;
+		}
+		.con3 i:nth-child(3){
+			top: 46%;
+			right: 0%;
+			-webkit-animation:move 2s linear 0.6s infinite;
+		}
+		.con3 i:nth-child(4){
+			right: 14%;
+			bottom: 14%;
+			-webkit-animation:move 2s linear 0.8s infinite;
+		}
+		.con3 i:nth-child(5){
+			left: 46%;
+			bottom: 0%;
+			-webkit-animation:move 2s linear 1s infinite;
+		}
+		.con3 i:nth-child(6){
+			left: 14%;
+			bottom: 14%;
+			-webkit-animation:move 2s linear 1.2s infinite;
+		}
+		.con3 i:nth-child(7){
+			top: 46%;
+			left: 0%;
+			-webkit-animation:move 2s linear 1.4s infinite;
+		}
+		.con3 i:nth-child(8){
+			left: 14%;
+			top: 14%;
+			-webkit-animation:move 2s linear 1.6s infinite;
+		}
+		@-webkit-keyframes run{
+			100%{
+				-webkit-transform:rotate(360deg);
+			}
+		}
+		@-webkit-keyframes go{
+			0%{
+				-webkit-transform:scale(1);
+			}
+			40%{
+				-webkit-transform:scale(1.6);
+			}
+			70%{
+				-webkit-transform:scaleX(1) scaleY(1.6);
+			}
+			100%{
+				-webkit-transform:scale(1);
+			}
+		}
+		@-webkit-keyframes move{
+			0%{
+				background: #ddd;
+			}
+			20%{
+				background: #000;
+			}
+			100%{
+				background: #ddd;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="area">
+		<div class="con"></div>
+	</div>
+	<div id="area2">
+		<div class="con2">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</div>
+	</div>
+	<div id="area3">
+		<div class="con3">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</div>
+	</div>
+</body>
+</html>

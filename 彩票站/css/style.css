@@ -1,0 +1,36 @@
+#wrap{
+	width: 246px;
+	height: 140px;
+	border: 1px solid ;
+	margin: 50px auto;
+	box-shadow: 2px 2px 5px grey;
+	background: #ddd;
+}
+h3{
+	margin-left: 1em;
+	text-shadow: 1px 1px 2px red;
+}
+input{
+	border: 1px solid;
+	width: 60px;
+	height: 26px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 4px;
+	margin-left: 1em;
+	background: #fff;
+	outline: none;
+	cursor: pointer;
+}
+span{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 50%;
+	text-align: center;
+	border: 1px solid red;
+	margin-left: 5px;
+}

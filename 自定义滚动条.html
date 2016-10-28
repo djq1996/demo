@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lala</title>
+	<style>
+		#box{
+			width: 400px;
+			height: 600px;
+			padding-right: 20px;
+			margin: 70px auto;
+			border: 5px solid green;
+			position: relative;
+			overflow: hidden;
+		}
+		.con{
+			width: 400px;
+			font-size: 30px;
+			position: absolute;
+			left: 0;
+			top: 0
+		}
+		#scroll{
+			width: 18px;
+			height: 600px;
+			background: #eee;
+			position: absolute;
+			right: 0;
+			top: 0
+		}
+		#bar{
+			width: 18px;
+			height: 50px;
+			background: yellow;
+			border-radius: 30%;
+			position: absolute;
+			left: 0;
+			top: 0
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="con">
+			dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴dasjkhdjk dhasjdh ad大师级的话安达健康是的哈数据库的话啊啊是滴
+		</div>
+		<div id="scroll">
+			<div id="bar"></div>
+		</div>
+	</div>
+	<script>
+	window.onload=function () {
+		var box = document.getElementById('box')
+		var con = document.getElementsByClassName('con')[0]
+		var scroll = document.getElementById('scroll')
+		var bar = document.getElementById('bar')
+		bar.onmousedown=function (e) {
+			var eve = e||window.event;
+			var firY = eve.clientY-bar.offsetTop;
+			document.onmousemove=function (e) {
+				var eve = e||window.event;
+				var newY = eve.clientY-firY;
+				var rightMax = scroll.clientHeight-bar.offsetHeight;
+				if (newY<=0) {
+					newY=0
+				}else if (newY>=rightMax) {
+					newY=rightMax
+				}
+				bar.style.top = newY+"px";
+				var scaleY = newY/rightMax;
+				con.style.top=-scaleY*(con.clientHeight-box.clientHeight)+"px"
+			}
+			document.onmouseup=function () {
+				document.onmousemove=null;
+			}
+			return false
+		}
+	}
+	</script>
+</body>
+</html>

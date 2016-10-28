@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>彩票站</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		input[type="button"]{
+			width: 200px;
+			height: 26px;
+			border: none;
+		}
+		input{
+			width: 200px;
+			height: 30px;
+			border: 1px solid;
+			margin-top: 10px;
+			font-size: 20px;
+		}
+		li{
+			list-style: none;
+			width: 30px;
+			height: 30px;
+			border: 1px solid red;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="买定离手">
+	<input type="button" value="走向人生巅峰">
+	<br />
+	<input type="text">
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+<script>
+	var input = document.getElementsByTagName('input')
+	var li = document.getElementsByTagName('li')
+	var arr = []
+	function random(min,max) {
+		return parseInt(Math.random()*(max-min+1))+min
+	}
+	function change() {
+		arr = []
+		while (arr.length<6) {
+		var prem = buLing(random(1,33))
+			for (var i=0;i<arr.length;i++) {
+				if (arr[i]==prem) {
+					break;
+				}
+			}
+			if (i==arr.length) {
+				arr.push(prem)
+			}
+		}
+		}
+		change();
+		var timer = null;
+		input[0].onclick=function () {
+			clearInterval(timer)
+				change();
+		timer = setInterval(function () {
+				change();
+			input[2].value=arr;
+			for(var i=0;i<arr.length;i++){
+				li[i].innerHTML=arr[i]
+			}
+			}, 100)
+		}
+		//这里 是 为了补充十位数上0
+		function buLing(a) {
+			return (a<10)?"0"+a:a;
+		}
+		input[1].onclick=function () {
+			clearInterval(timer)
+		}
+</script>
+</html>
