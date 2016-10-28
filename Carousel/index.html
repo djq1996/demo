@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>大图轮播</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.con{
+			width: 620px;
+			margin: 50px auto;
+			position: relative;
+		}
+		#twoChange{
+			width: 600px;
+			position: absolute;
+			left: 10px;
+			top: 400px;
+		}
+		#twoChange input{
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			position: absolute;
+			font-size: 60px;
+			text-align: center;
+			line-height: 60px;
+			top: 0;
+			color: #bbb;
+			outline-style: none;
+			background: transparent;
+			z-index: 3
+		}
+		#twoChange input:nth-child(1){
+			left: 0;
+		}
+		#twoChange input:nth-child(2){
+			right: 0;
+		}
+		#wrap{
+			position: relative;
+			overflow: hidden;
+			width: 620px;
+			height: 930px;
+		}
+		.box{
+			position: absolute;
+			left: 0;
+			top: 0;
+			overflow: hidden;
+			height: 930px;
+			transition:all 0.5s ease-in-out;
+		}
+		.box div{
+			width: 620px;
+			height: 930px;
+			float: left;
+		}
+		#fourChange{
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+			width: 190px;
+			z-index: 3;
+			margin-left: -95px;
+		}
+		#fourChange input{
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			font-size: 24px;
+			text-align: center;
+			line-height: 24px;
+			background: transparent;
+			outline-style: none;
+			text-shadow: 2px 2px 2px red;
+		}
+	</style>
+</head>
+<body>
+<div class="con">
+	<div id="twoChange">
+		<input type="button" value="&lt;">
+		<input type="button" value="&gt;">
+	</div>
+	<div id="fourChange">
+		<input type="button" value="壹">
+		<input type="button" value="貳">
+		<input type="button" value="叁">
+		<input type="button" value="肆">
+		<input type="button" value="伍">
+	</div>
+	<div id="wrap">
+		<div class="box">
+			<div><img src="images/img1.jpg" alt=""></div>
+			<div><img src="images/img2.jpg" alt=""></div>
+			<div><img src="images/img3.jpg" alt=""></div>
+			<div><img src="images/img4.jpg" alt=""></div>
+			<div><img src="images/img5.jpg" alt=""></div>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+window.onload=function () {
+	var wrap = document.getElementById('wrap')
+	var box = wrap.getElementsByClassName('box')[0]
+	var oDiv = box.getElementsByTagName('div')
+	var pre = document.getElementById('twoChange').getElementsByTagName('input')[0]
+	var next = document.getElementById('twoChange').getElementsByTagName('input')[1]
+	var fourChange = document.getElementById('fourChange')
+	var btn = fourChange.getElementsByTagName('input')
+	box.style.width = oDiv.length*wrap.offsetWidth + "px"
+	var num = 0;
+	var timer = null;
+	next.onclick = function(){
+		nextFn()
+	}
+	next.onmouseout = function () {
+		next.style.color = "#bbb";
+	}
+	function nextFn(){//下一页函数
+		num++;
+		if(num>oDiv.length-1){
+			num = 0;
+		}
+		box.style.left = -num*wrap.offsetWidth + "px";
+		next.style.color = "#000";
+	}
+	pre.onclick = function(){
+		preFn()
+	}
+	pre.onmouseout = function () {
+		pre.style.color = "#bbb";
+	}
+	function preFn(){//上一页函数
+		num--;
+		if(num<0){
+			num = oDiv.length-1;
+		}
+		box.style.left = -num*wrap.offsetWidth + "px";
+		pre.style.color = "#000";
+	}
+	for(var i = 0;i<oDiv.length;i++){
+		btn[i].num = i;
+		btn[i].onclick = function () {
+			num = this.num
+			box.style.left = -num*wrap.offsetWidth + "px";
+			clearInterval(timer)
+		}
+	}
+	function timeGo () {
+		timer = setInterval(nextFn, 2000)
+	}
+	timeGo();
+	box.onmouseover = function () {
+		clearInterval(timer)
+	}
+	box.onmouseout = function () {
+		timeGo()
+	}
+}
+</script>
+</html>

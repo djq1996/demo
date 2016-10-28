@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>碰撞的小球</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		canvas{
+			box-shadow: 4px 4px 40px #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="1000" height="800"></canvas>
+</body>
+<script>
+	var canvas = document.getElementById('canvas')
+	var context = canvas.getContext('2d')
+			var arrX=[]
+			var arrY=[]
+			var arrR=[]
+			var rgbR=[]
+			var rgbG=[]
+			var rgbB=[]
+			var speedX=[];
+			var speedY=[];
+		function round(min,max) {
+			return parseInt(Math.random()*(max-min)+min)
+		}
+		for (var i = 0; i <300; i++) {
+			var x = round(30,970);
+			arrX.push(x);
+			var y = round(30,770);
+			arrY.push(y);
+			var r = round(10,30);
+			arrR.push(r);
+			var rgbArr=[];
+			 rgbR.push(round(0,255))
+			rgbG.push(round(0,255))
+			rgbB.push(round(0,255))
+			var speedx=round(1,8);
+			speedX.push(speedx)
+			var speedy=round(1,8);
+			speedY.push(speedy);
+		}
+		function timeGo() {
+			for (var i = 0; i <300; i++) {
+				context.beginPath();
+				context.arc(arrX[i],arrY[i],arrR[i],0,Math.PI*2,true);
+				context.fillStyle="rgb("+rgbR[i]+","+rgbG[i]+","+rgbB[i]+")";
+				context.fill();
+				arrX[i]+=speedX[i];
+				arrY[i]+=speedY[i];
+			if (arrX[i]>(1000-arrR[i])){
+				speedX[i]=-speedX[i]
+			}else if (arrX[i]<arrR[i]) {
+				speedX[i]=-speedX[i]
+			}
+			if (arrY[i]>(800-arrR[i])){
+				speedY[i]=-speedY[i]
+			}else if (arrY[i]<arrR[i]) {
+				speedY[i]=-speedY[i]
+			}
+			}
+			
+		}
+		setInterval(function(){
+			context.clearRect(0,0,1000,800);
+			timeGo()
+		},10)
+</script>
+</html>

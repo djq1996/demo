@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#minBox{
+			position: absolute;
+			border: 1px solid red;
+		}
+		#square{
+			width: 175px;
+			height: 175px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+			background: rgba(255,255,0,0.3);
+		}
+		#maxBox{
+			width: 400px;
+			height: 400px;
+			border:1px solid #000;
+			position: absolute;
+			left: 370px;
+			top: 0;
+			overflow: hidden;
+			display: none;
+		}
+		#maxBox img{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="minBox">
+		<img src="img/min.jpg" alt="">
+		<div id="square"></div>
+	</div>
+	<div id="maxBox">
+		<img src="img/max.jpg" alt="">
+	</div>
+</div>
+<script>
+	var minBox = document.getElementById('minBox')
+	var square = document.getElementById('square')
+	var maxBox = document.getElementById('maxBox')
+	var maxImg = maxBox.getElementsByTagName('img')[0]
+	minBox.onmousemove=function (e) {
+		maxBox.style.display = "block"
+		square.style.display = "block"
+		var ev = e||window.event;
+		var X = ev.clientX -minBox.offsetLeft- square.offsetWidth/2;
+		var Y = ev.clientY -minBox.offsetTop- square.offsetHeight/2;
+		var maxWidth = minBox.clientWidth-square.offsetWidth;
+		var maxHeight = minBox.clientHeight-square.offsetHeight;
+		if (X>=maxWidth) {
+			X=maxWidth;
+		}else if (X<0) {
+			X=0
+		}
+		if (Y>=maxHeight) {
+			Y=maxHeight;
+		}else if (Y<=0) {
+			Y=0
+		}
+		var scaleX = X/maxWidth;
+		var scaleY = Y/maxHeight;
+		maxImg.style.left=-scaleX*(maxImg.clientWidth-maxBox.offsetWidth)+"px"
+		maxImg.style.top=-scaleY*(maxImg.clientHeight-maxBox.offsetHeight)+"px"
+		square.style.left = X + "px";
+		square.style.top = Y + "px";
+	}
+	minBox.onmouseout = function () {
+		maxBox.style.display = "none"
+		square.style.display = "none"
+	}
+</script>
+</body>
+</html>

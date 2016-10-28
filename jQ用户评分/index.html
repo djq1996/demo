@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>评价</title>
+	<script src="jquery-1.12.3.min.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#container{
+			width: 100px;
+			margin: 100px auto;
+		}
+		ul,li{list-style: none;}
+		h3{
+			font-weight: bold;
+		}
+		ul{
+			margin-top: 10px;
+			overflow: hidden;
+		}
+		li{
+			float: left;
+			width: 20px;
+			height: 20px;
+			background-image: url(star.png);
+			background-position:-38px 0; 
+		}
+		p{
+			margin-top: 20px;
+			color: #bbb;
+		}
+	</style>
+</head>
+<body>
+<div id="container">
+	<h3>您的评论</h3>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<p>推荐</p>
+	<form id="btn" action="loading.html" method="post">
+		<textarea id="" cols="30" rows="10" placeholder="请输入...">
+			
+		</textarea>
+		<input type="button" value="点击提交">
+	</form>
+</div>
+<script>
+	$(document).ready(function () {
+		$("li").on("mousemove",function () {
+			clear()
+			index=$(this).index(this.index);
+			$("li").each(function (i) {
+			switch (index) {
+				case 0:$('p')[0].innerHTML="很差";break;
+				case 1:$('p')[0].innerHTML="较差";break;
+				case 2:$('p')[0].innerHTML="还行";break;
+				case 3:$('p')[0].innerHTML="推荐";break;
+				case 4:$('p')[0].innerHTML="力荐";break;
+			}
+			if (i>index) {
+				return;
+			}
+			$(this).css({
+				backgroundPosition:"0 0"
+			})
+			})
+			//alert( $('li').length)  //5
+			// alert($(this).index(this.index))   //当前的序列
+		})
+		var btn = $("#btn")
+		btn.onsubmit = function () {
+			alert("a")
+		}
+	function clear() {
+		$('li').css({backgroundPosition:"-38px 0"})
+	}
+	})
+</script>
+</body>
+</html>

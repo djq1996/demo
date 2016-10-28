@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>不通过遍历实现图片/楼层按需加载</title>
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    div {
+        width: 400px;
+        height: 198px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        border: 1px solid red;
+        background: url(images/loading.gif) center no-repeat;
+    }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+    
+    var i = 1, temp, div = document.createElement('div');
+
+    while(i <= 30000) {
+        temp = div.cloneNode();
+        temp.innerHTML = i;
+        document.body.appendChild(temp);
+        i++;
+    }
+
+    window.onload = function() {
+        var offset = 50,
+            itemHeight = 200 + offset, //元素高度加偏移量
+            timer,
+            divs = [].reduce.call(document.getElementsByTagName('div'), function(prev, next, i) {
+                return prev[i] = next, prev;
+            }, {});
+
+        change();
+        
+        window.onresize = window.onscroll = change;
+
+        //不通过遍历divs实现图片懒加载,提高性能
+        function change() {
+            timer && clearTimeout(timer);
+
+            timer = setTimeout(function() {
+                var min = document.documentElement.scrollTop || document.body.scrollTop + offset,
+                    max = min + (window.innerHeight || document.documentElement.clientHeight) - offset;
+
+                min = Math.floor(min / itemHeight);
+                max = Math.ceil(max / itemHeight);
+
+                while (min < max) {
+                    //每次执行后都会删除当前元素
+                    divs[min] && (divs[min].style.background = 'url(images/img145_01.jpg) center no-repeat', delete divs[min]);
+                    min++;
+                }
+
+            }, 500);
+        }
+    }
+
+    // Production steps of ECMA-262, Edition 5, 15.4.4.21
+    // Reference: http://es5.github.io/#x15.4.4.21
+    if (!Array.prototype.reduce) {
+      Array.prototype.reduce = function(callback /*, initialValue*/) {
+        'use strict';
+        if (this == null) {
+          throw new TypeError('Array.prototype.reduce called on null or undefined');
+        }
+        if (typeof callback !== 'function') {
+          throw new TypeError(callback + ' is not a function');
+        }
+        var t = Object(this), len = t.length >>> 0, k = 0, value;
+        if (arguments.length == 2) {
+          value = arguments[1];
+        } else {
+          while (k < len && !(k in t)) {
+            k++; 
+          }
+          if (k >= len) {
+            throw new TypeError('Reduce of empty array with no initial value');
+          }
+          value = t[k++];
+        }
+        for (; k < len; k++) {
+          if (k in t) {
+            value = callback(value, t[k], k, t);
+          }
+        }
+        return value;
+      };
+    }
+
+    </script>
+</body>
+
+</html>

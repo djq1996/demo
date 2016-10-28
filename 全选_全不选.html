@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全选/全不选</title>
+</head>
+<body>
+	<input type="checkbox" id="switch">全选</input>
+	<input type="checkbox" class="sel"></input>
+	<input type="checkbox" class="sel"></input>
+	<input type="checkbox" class="sel"></input>
+	<input type="checkbox" class="sel"></input>
+	<input type="checkbox" class="sel"></input>
+	<input type="checkbox" class="sel"></input>
+	<script>
+		var btn1 = document.getElementById('switch')
+		var btn2 = document.getElementsByClassName('sel')
+		btn1.onclick=function () {
+			 if (btn1.checked) {
+			 	for(var i=0;i<btn2.length;i++){
+			 		btn2[i].checked=true
+			 	}
+			 } else {
+			 	for(var j=0;j<btn2.length;j++){
+			 		btn2[j].checked=false
+			 	}
+			 }
+		}
+	</script>
+</body>
+</html>

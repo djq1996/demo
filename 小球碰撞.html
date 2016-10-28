@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>碰撞的小球</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		canvas{
+			box-shadow: 4px 4px 40px #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400"></canvas>
+</body>
+<script>
+	var canvas = document.getElementById('canvas')
+	var context = canvas.getContext('2d')
+		context.fillStyle="pink"
+		var x=0,y=0;
+		var speedX=2,speedY=2;
+		function go() {
+			if (x<0) {
+				speedX=2
+
+			}else if (x>canvas.width-50) {
+				speedX=-2
+			}
+			if (y<0) {
+				speedY=2
+
+			}else if (y>canvas.height-50) {
+				speedY=-2
+			}
+			x+=speedX
+			y+=speedY
+			context.fillRect(x,y,50,50)
+		}
+		setInterval(function () {
+			context.clearRect(0,0,600,400)
+			go()
+		},10)	
+</script>
+</html>
