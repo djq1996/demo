@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>门店量化表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.css">
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/statements.css"/>
+		<style type="text/css">
+			#item1mobile .container,#item2mobile .container,#item3mobile .container{
+				display: none;
+			}
+			#item1mobile div.active,#item2mobile div.active,#item3mobile div.active{
+				
+				display: block;
+			}
+			#item1mobile ul,#item2mobile ul,#item3mobile ul{
+				margin: 0;
+				padding: .6rem;
+			}
+			#item1mobile ul li,#item2mobile ul li,#item3mobile ul li{
+				float: left;
+				width: 80px;
+				text-align: center;
+				padding-bottom:.3rem;
+			}
+			#item1mobile ul li,#item2mobile ul li,#item3mobile ul li{
+				color: #333;
+				font-size: 13px;
+			}
+			#item1mobile ul li.active,#item2mobile ul li.active,#item3mobile ul li.active{
+				color: #ff6633;
+			}
+			.container{
+				/*width: 320%;*/
+				height: 320px; margin:10px auto 0
+			}
+			.aggretage{
+				font-size: 14px;
+				line-height: 35px;
+				border-bottom: 1px solid #EAEAEA;
+				padding-left:8px;
+			}
+			.aggretage button{
+				border: none;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav mui-badge-light-blue" id="header">
+		   <h1 class="mui-title">
+				门店量化表
+			</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper" style="top: 44px;">
+				<div class="mui-scroll">
+						<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+							<a class="mui-control-item mui-active" href="#item1mobile">
+								全部
+							</a>
+							<a class="mui-control-item" href="#item2mobile">
+								住宅
+							</a>
+							<a class="mui-control-item" href="#item3mobile">
+								商业
+							</a>
+						</div>
+						<div class="aggretage">
+							<label>总量：</label><span>500</span>
+							<button class="mui-pull-right" id="transform" type="button"><span>买卖</span>&nbsp;<i class="mui-icon mui-icon-loop"></i></button>
+						</div>
+						<!--<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>-->
+						<div class="mui-slider-group">
+							<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+								<div class="container active" id="container" ></div>
+								<div class="container" id="containera" ></div>
+								<div class="container" id="containerb" ></div>
+								<div class="container" id="containerc" ></div>
+								<div class="container" id="containerd" ></div>
+								<div class="container" id="containere" ></div>
+								<div class="container" id="containerf" ></div>
+								<div>
+									<ul class="menuShop">
+										<li class="active">客户总量</li>
+										<li>有效客户</li>
+										<li>带看回访</li>
+										<li>在谈</li>
+										<li>复看率</li>
+										<li>跨区带看</li>
+										<li>跨区被看</li>
+									</ul>
+								</div>
+							</div>
+							<div id="item2mobile" class="mui-slider-item mui-control-content">
+								<div class="container active" id="content" ></div>
+								<div class="container" id="contenta" ></div>
+								<div class="container" id="contentb" ></div>
+								<div class="container" id="contentc" ></div>
+								<div class="container" id="contentd" ></div>
+								<div class="container" id="contente" ></div>
+								<div class="container" id="contentf" ></div>
+								<div>
+									<ul class="menuShop">
+										<li class="active">客户总量</li>
+										<li>有效客户</li>
+										<li>带看回访</li>
+										<li>在谈</li>
+										<li>复看率</li>
+										<li>跨区带看</li>
+										<li>跨区被看</li>
+									</ul>
+								</div>
+							</div>
+							<div id="item3mobile" class="mui-slider-item mui-control-content">
+								<div class="container active" id="_content" ></div>
+								<div class="container" id="_contenta"></div>
+								<div class="container" id="_contentb" ></div>
+								<div class="container" id="_contentc" ></div>
+								<div class="container" id="_contentd" ></div>
+								<div class="container" id="_contente" ></div>
+								<div class="container" id="_contentf" ></div>
+								<div>
+									<ul class="menuShop">
+										<li class="active">客户总量</li>
+										<li>有效客户</li>
+										<li>带看回访</li>
+										<li>在谈</li>
+										<li>复看率</li>
+										<li>跨区带看</li>
+										<li>跨区被看</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script src="../../js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../../js/common.js" ></script>
+	<script src="../../js/mui.min.js"></script>
+	<script src="https://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+	<script type="text/javascript">
+		mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		$('.container').width($('body').width());
+		/*转换买卖租赁*/
+		$("#transform").on("tap",function(){
+			$(this).find('span').text() == '买卖'?$(this).find('span').text("租赁"):$(this).find('span').text("买卖")
+		})
+		mui('.mui-scroll-wrapper').scroll({
+			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+		});
+		$("#item1mobile .menuShop li").on("tap",function(){
+			$(this).addClass('active').siblings().removeClass('active')
+			$("#item1mobile .container").eq($(this).index()).show().siblings('.container').hide()
+		})
+		$("#item2mobile .menuShop li").on("tap",function(){
+			$(this).addClass('active').siblings().removeClass('active')
+			$("#item2mobile .container").eq($(this).index()).show().siblings('.container').hide()
+		})
+		$("#item3mobile .menuShop li").on("tap",function(){
+			$(this).addClass('active').siblings().removeClass('active')
+			$("#item3mobile .container").eq($(this).index()).show().siblings('.container').hide()
+		})
+		/*复看率*/
+		var options = {
+	        chart: {
+	            type: 'column'
+	        },
+	        title: {
+	            text: ''
+	        },
+	       legend: {                                                                    
+	            enabled: false                                                           
+	       },
+	        xAxis: {
+	            categories: [
+	                '朝阳店',
+	                '国贸店',
+	                '像素店',
+	            ],
+	            crosshair: true,
+	            labels: {
+	                formatter: function () {
+	                        return '<a href="javascript:;" class="xbiaoqian">'+this.value+'</a>'
+	                }
+	            }
+	        },
+	        yAxis: {
+	            title: {
+	                text: ''
+		            }
+		    },
+		    credits: {  
+	            enabled: false     //不显示LOGO 
+	       },
+	        plotOptions: {
+	        	 series: {
+	        	 	 borderWidth: 0,
+	                dataLabels: {
+	                    enabled: true,
+	                    format: '{point.y:.1f}%'
+	                },
+	                events: {
+	                     
+	                }
+	           },
+	            column: {
+	            	dataLabels: {
+	                    enabled: true          // 开启数据标签
+	                },
+	                pointPadding: 0.2,
+	                borderWidth: 0
+	            }
+	        },
+	        series: [{
+	            name: '朝阳店',
+	            data: [50,30,42]
+	        }]
+	    };
+	   
+		function getConfiguration(data){
+			var option = {
+		        chart: {
+		            plotBackgroundColor: null,
+		            plotBorderWidth: null,
+		            plotShadow: false
+		        },
+		        title: {
+		            text: ''
+		        },
+		         tooltip: {
+		             enabled: false
+		        },
+		        plotOptions: {
+		            pie: {
+		                allowPointSelect: true,
+		                cursor: 'pointer',
+		                dataLabels: {
+		                    enabled: true,
+		                    distance:8,
+		                    format: '<b>{point.name}</b>: {point.y}<br/>{point.name}: <b>{point.percentage:.1f} %</b>',
+		                    style: {
+		                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		                    }
+		                }
+		            },
+		            series: {
+		                events: {
+		                    click: function(e) {
+		                     	console.log(e)
+		                     	console.log()
+			                    mui.openWindow({
+									url:'_www/html/Agent/statementCustomerList.html',
+									styles: {
+										popGesture:"close"
+									},
+									show: {
+										aniShow: 'pop-in',
+										duration: '300',
+									},
+									extras:{
+										titleText:e.point.name
+									}
+								})
+		                        return false;
+			                } 
+		                }
+		           }
+		        },
+		         credits: {  
+				            enabled: false     //不显示LOGO 
+				       },
+		        series: data
+		    }
+			return option
+		}
+		var arraya = [{
+            type: 'pie',
+            name: '数据量',
+            data: [
+                ['朝阳店',200],
+                ['海淀店',100],
+                ['像素店',200],
+            ]
+        }]
+		var arrayb = [{
+            type: 'pie',
+            name: '数据量',
+            data: [
+                ['朝阳店',200],
+                ['海淀店',50],
+                ['像素店',250],
+            ]
+        }]
+		var arrayc = [{
+            type: 'pie',
+            name: '数据量',
+            data: [
+                ['朝阳店',300],
+                ['海淀店',100],
+                ['像素店',100],
+            ]
+        }]
+		var arrayd = [{
+            type: 'pie',
+            name: '数据量',
+            data: [
+                ['朝阳店',290],
+                ['海淀店',110],
+                ['像素店',100],
+            ]
+        }];
+		var arraye = [{
+            type: 'pie',
+            name: '数据量',
+            data: [
+                ['朝阳店',320],
+                ['海淀店',80],
+                ['像素店',100],
+            ]
+        }]
+		var arrayf= [{
+            type: 'pie',
+            name: '数据量',
+            data: [
+                ['朝阳店',150],
+                ['海淀店',50],
+                ['像素店',300],
+            ]
+        }]
+		$(function () {
+		    $('#container').highcharts(getConfiguration(arraya));
+		    $('#containera').highcharts(getConfiguration(arrayb));
+		    $('#containerb').highcharts(getConfiguration(arrayc));
+		    $('#containerc').highcharts(getConfiguration(arrayd));
+		    $('#containere').highcharts(getConfiguration(arraye));
+		    $('#containerf').highcharts(getConfiguration(arrayf));
+		    $('#containerd').highcharts(options);
+		    
+		    $('#content').highcharts(getConfiguration(arrayc));
+		    $('#contenta').highcharts(getConfiguration(arrayb));
+		    $('#contentb').highcharts(getConfiguration(arraya));
+		    $('#contentc').highcharts(getConfiguration(arrayd));
+		    $('#contentf').highcharts(getConfiguration(arraye));
+		    $('#contentd').highcharts(options);
+		    $('#contente').highcharts(getConfiguration(arrayf));
+		     
+		    $('#_content').highcharts(getConfiguration(arrayb));
+		    $('#_contenta').highcharts(getConfiguration(arraya));
+		    $('#_contentb').highcharts(getConfiguration(arrayc));
+		    $('#_contentc').highcharts(getConfiguration(arrayd));
+		    $('#_contentd').highcharts(options);
+		    $('#_contente').highcharts(getConfiguration(arrayf));
+		    $('#_contentf').highcharts(getConfiguration(arraye));
+		    
+		    
+		});
+		/*点击x轴进入标签*/
+		$('body').on('tap','.xbiaoqian',function(){
+			var _txt = $(this).text()
+			mui.openWindow({
+				url:'_www/html/Agent/statementCustomerList.html',
+				styles: {
+					popGesture:"close"
+				},
+				show: {
+					aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+					duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+				},
+				extras:{
+					titleText:_txt
+				}
+			})
+		})
+
+	</script>
+</html>

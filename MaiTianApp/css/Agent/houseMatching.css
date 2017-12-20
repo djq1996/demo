@@ -1,0 +1,116 @@
+.rent-purchase {
+	width: 8.1rem;
+	line-height: 25px;
+	height: 26px;
+	margin: .5rem auto;
+	border: 1px solid #ff6633;
+	font-size: 14px;
+	color: #ff6633;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.rent-purchase a {
+	display: block;
+	float: left;
+	width: 4rem;
+}
+
+.rent-purchase a.active {
+	background: #ff6633;
+	color: #fff;
+}
+.screenBox{
+	background: #fff;
+	border-top:1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+	z-index: 4;
+}
+.screenBox .mui-col-xs-3{
+	border-right: 1px solid #ccc;
+	text-align: center;	
+	height: 40px;
+}
+.screenBox p{
+	margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+	height: 40px;
+	line-height: 40px;
+}
+.screenBox .mui-col-xs-3:last-child{border: 0;}
+.screenBox .mui-col-xs-3 .mui-icon{
+	vertical-align: middle;
+	font-size: 14px;
+	color: #8f8f94;
+}
+.screenBox .mui-col-xs-3 ul{
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background: #fff;
+}
+.screenBox .mui-col-xs-3 ul li{
+	padding: 10px 20px;
+	font-size: 14px;
+	text-align: left;
+	border-bottom: 1px solid #eaeaea;
+	}
+.mui-table-view .mui-media-object{
+	height: 55px;
+	width: 80px;
+	max-width: 80px;
+	margin-top: 6px;
+}
+.mui-table-view input[type=checkbox]{
+	margin: 25px 5px 0 0;
+	
+}
+.mui-media-body h2{
+	font-size: 14px;
+	font-weight: normal;
+	color: #555;
+}
+.mui-media-body p span.area{
+	margin-left: 10px;
+}
+.mui-media-body span.money{
+	font-size: 14px;
+	color: #555;
+}
+.mui-media-body span.money i{
+	font-style: initial;
+	/*font-size: 16px;*/
+	color: red;
+}
+.mui-media-body .mui-col-xs-5 p{
+	font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+.bg{
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgba(0,0,0,.3);
+    display: none;
+}
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+.mui-scroll-wrapper{
+	top: 84px;
+	bottom: 50px;
+}
+.mui-bar .mui-btn-block {
+			    color: #fff;
+			    background: #f56140;
+			}

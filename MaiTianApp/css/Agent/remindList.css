@@ -1,0 +1,27 @@
+.mui-scroll-wrapper{
+	top: 96px;
+}
+.mui-table-view-cell:after{
+	left: 0;
+}
+.mui-table-view-cell{
+	font-size:14px;
+}
+.searchBox{
+	padding: 10px;
+}
+.searchBox .mui-col-xs-10 input{
+	margin: 0;
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+.searchBox .mui-col-xs-2 button{
+	background: #f56140;
+    color: #fff;
+    float: right;
+    border: 0;
+    height: 30px;
+	
+}

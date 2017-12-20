@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>客源列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.css">
+		<link rel="stylesheet" type="text/css" href="../../css/icons-extra.css"/>
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/customersDetail.css"/>
+		<style>
+			.bg{
+			    position: fixed;
+			    z-index: 14;
+			    width: 100%;
+			    height: 100%;
+			    background: rgba(0,0,0,.4);
+			    top: 0;
+			    display: none;
+			}
+			.bg .content {
+			    margin: 3rem 1rem;
+			    background: #fff;
+			    border-radius: .3rem;
+			    padding: .3rem;
+			}
+			.bg .content textarea{
+				border-color: #ddd;
+				margin-bottom: 0;
+				height: 250px;
+				font-size: .65rem;
+			}
+			.bg .content button{
+				display: block;
+				margin: 0 auto;
+				border: none;
+				color: #fff;
+				width: 100px;
+				background: #ff6633;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav mui-badge-light-blue">
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav"></span><span class="customerName">客户详情</span>
+			</button>
+			<a href="#popover" class="mui-icon mui-icon-bars mui-pull-right"></a>
+			<a class="mui-icon mui-icon-extra mui-icon-extra-arrowrightcricle mui-pull-right"></a>
+			<a class="mui-icon mui-icon-extra mui-icon-extra-arrowleftcricle  mui-pull-right"></a>
+			<!--<a class="mui-action-back mui-icon mui-icon-extra mui-icon-extra-heart mui-pull-right"></a>-->
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<div>
+				<button type="button" class="mui-btn" id="updateIntention">
+				意向调整
+			    </button>
+				<button type="button" class="mui-btn" id="takeLook"> 
+					带看
+			    </button>
+				<button type="button" class="mui-btn says" id="writeFollow"> 
+					写跟进
+			    </button>
+			</div>
+		</nav>
+		
+		<div class="mui-content">
+			<!--右上角弹框-->
+			<div id="popover" class="mui-popover mui-popover-action mui-popover-bottom">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#popover" data-type='0'>客户推送</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#popover" data-type='1'>设置提醒</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#popover" data-type='2'>修改客源</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#popover" data-type='3'>房源匹配</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#popover" data-type='4'>转再谈</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#popover" data-type='5'>转成交</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#popover"><b>取消</b></a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-scroll-wrapper"	style="top:44px;bottom: 55px;">
+				<div class="mui-scroll">
+					<!--客户信息-->
+					<div class="customerDetail">
+						<div class="mui-row">
+							<div class="mui-col-xs-10">
+								<div class="customerInfo mui-row">
+									<span class="mui-col-xs-4">程先生</span>
+									<span class="mui-col-xs-3">住宅</span>
+									<span class="mui-col-xs-5">A级</span>
+									<span class="mui-col-xs-12">185****2894</span>
+								</div>
+							</div>
+							<div class="mui-col-xs-2"><a href="tel:18513552894" class="mui-icon mui-icon-phone mui-pull-right" style="color: #FF6633;margin-top: 6px;"></a></div>
+						</div>
+						<div class="message" style="display: none;">
+							<ul class="mui-row">
+								<li class="mui-col-xs-6"><label>性别：</label><div>男</div></li>
+								<li class="mui-col-xs-6"><label>购房目的：</label><div>学区</div></li>
+								<li class="mui-col-xs-6"><label>居室：</label><div>两室一厅</div></li>
+								<li class="mui-col-xs-6"><label>价格区间：</label><div>100-200万</div></li>
+								<li class="mui-col-xs-6"><label>意向购买社区：</label><div>宣海家园</div></li>
+								<li class="mui-col-xs-6"><label>客户来源：</label><div>上门</div></li>
+								<li class="mui-col-xs-6"><label>是否决策人：</label><div>是</div></li>
+								<li class="mui-col-xs-6"><label>上户渠道：</label><div>买房</div></li>
+								<li class="mui-col-xs-6"><label>购房方式：</label><div>全款</div></li>
+								<li class="mui-col-xs-6"><label>贷款记录：</label><div>良好</div></li>
+								<li class="mui-col-xs-6"><label>购房资格：</label><div>良好</div></li>
+								<li class="mui-col-xs-6"><label>客户地址：</label><div>北京朝阳区</div></li>
+								<li class="mui-col-xs-6"><label>客户喜好：</label><div>吃</div></li>
+								<li class="mui-col-xs-6"><label>家庭成员：</label><div>3</div></li>
+								<li class="mui-col-xs-6" style="margin: 0;"><label>客户职业：</label><div>程序猿</div></li>
+							</ul>
+						</div>
+						<div class="showHide"><span>展开</span><i class="mui-icon mui-icon-arrowdown"></i></div>
+					</div>
+					<!--客户意向-->
+					<h4 class="title">
+						客户意向
+					</h4>
+					<ul class="customerIntention">
+						<li class="mui-clearfix">
+							<div class="date">
+								<p><b>3</b></p>
+								<p class="sj">2017-8-31</p>
+							</div>
+							<div class="homeDetail mui-row" >
+								<div class="mui-col-xs-6"><label>居室：</label><div>2室1厅</div></div>
+								<div class="mui-col-xs-6"><label>目的：</label><div>(地铁，学区)</div></div>
+								<div class="mui-col-xs-6"><label>社区：</label><div>北京像素</div></div>
+								<div class="mui-col-xs-6"><label>价格：</label><div>100-200万</div></div>
+							</div>
+						</li>
+						<li class="mui-clearfix">
+							<div class="date">
+								<p><b>2</b></p>
+								<p class="sj ">2017-8-31</p>
+							</div>
+							<div class="homeDetail mui-row" >
+								<div class="mui-col-xs-6"><label>居室：</label><div>3室1厅</div></div>
+								<div class="mui-col-xs-6"><label>目的：</label><div>(地铁，学区)</div></div>
+								<div class="mui-col-xs-6"><label>社区：</label><div>北京像素</div></div>
+								<div class="mui-col-xs-6"><label>价格：</label><div>150-300万</div></div>
+							</div>
+						</li>
+						<li class="mui-clearfix">
+							<div class="date">
+								<p><b>1</b></p>
+								<p class="sj noafter">2017-8-31</p>
+							</div>
+							<div class="homeDetail mui-row" >
+								<div class="mui-col-xs-6"><label>居室：</label><div>2室1厅</div></div>
+								<div class="mui-col-xs-6"><label>目的：</label><div>(地铁，学区)</div></div>
+								<div class="mui-col-xs-6"><label>社区：</label><div>北京像素</div></div>
+								<div class="mui-col-xs-6"><label>价格：</label><div>100-200万</div></div>
+							</div>
+						</li>
+					</ul>
+					<div class="showHides"><span>展开</span><i class="mui-icon mui-icon-arrowdown"></i></div>
+					<!--跟进过程-->
+					<h4 class="title">
+						跟进过程
+					</h4>
+					<div class="follow-up-the-process">
+						<!--<h4 class="h4-title">跟进过程</h4>-->
+						<ul class="mui-clearfix">
+							<li>
+								<div class="process process-a"></div>
+								<p>客户登记</p>
+							</li>
+							<li>
+								<div class="process"></div>
+								<p>首次带看</p>
+							</li>
+							<li>
+								<div></div>
+								<p>多次带看</p>
+							</li>
+							<li>
+								<div></div>
+								<p>在谈阶段</p>
+							</li>
+							<li>
+								<div class="noafter"></div>
+								<p>我司成交</p>
+							</li>
+						</ul>
+					</div>
+					<!--带看-->
+					<h4 class="title">
+						带看轨迹
+					</h4>
+					<ul class="takeLookAt">
+						<li class="mui-row" id="homeDetail">
+							<div class="mui-col-xs-3 date">
+								<p><b>1</b></p>
+								<p class="sj">2017-8-31</p>
+							</div>
+							<div class="mui-col-xs-8 homeName" >
+								<p class="mui-ellipsis">宣海家园1期 2栋#4单元#1502 </p>
+								<p>王五 — 客户不满意</p>
+							</div>
+							<div class="mui-col-xs-1">
+								<i class="mui-icon mui-icon-arrowright"></i>
+							</div>
+						</li>
+						<li class="mui-row" id="homeDetail">
+							<div class="mui-col-xs-3 date">
+								<p><b>2</b></p>
+								<p class="sj">2017-8-31</p>
+							</div>
+							<div class="mui-col-xs-8 homeName" >
+								<p class="mui-ellipsis"><i class="mui-icon mui-icon-star" style="font-size: 17px;line-height: normal;"></i>宣海家园1期 2栋#4单元#1519 </p>
+								<p>王五 — 客户不满意</p>
+							</div>
+							<div class="mui-col-xs-1">
+								<i class="mui-icon mui-icon-arrowright"></i>
+							</div>
+						</li>
+						<li class="mui-row" id="homeDetail">
+							<div class="mui-col-xs-3 date">
+								<p><b>3</b></p>
+								<p class="sj">2017-9-1</p>
+							</div>
+							<div class="mui-col-xs-8 homeName" >
+								<p class="mui-ellipsis"><i class="mui-icon mui-icon-star" style="font-size: 17px;line-height: normal;"></i> 2栋#4单元#1602 </p>
+								<p>王五 — 客户意向较强</p>
+							</div>
+							<div class="mui-col-xs-1">
+								<i class="mui-icon mui-icon-arrowright"></i>
+							</div>
+						</li>
+						
+					</ul>
+					<!--跟进-->
+					<h4 class="title">
+						跟进过程
+					</h4>
+					<ul class="takeLookAt">
+						<li class="mui-row">
+							<div class="mui-col-xs-3 date">
+								<p><b>1</b></p>
+								<p class="sj">2017-8-31</p>
+							</div>
+							<div class="mui-col-xs-9  homeName" >
+								<p class="mui-ellipsis">客户不满意！</p>
+								<p>张三 — 电话</p>
+							</div>
+						</li>
+						<li class="mui-row">
+							<div class="mui-col-xs-3 date">
+								<p><b>2</b></p>
+								<p class="sj">2017-9-1</p>
+							</div>
+							<div class="mui-col-xs-9  homeName" >
+								<p class="mui-ellipsis">客户急需购买婚房，急购！</p>
+								<p>张三 — 微信</p>
+							</div>
+						</li>
+						
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+		<!--填写框-->
+		<div class="bg">
+			<div class="content">
+				<textarea name="" rows="" cols="" maxlength="200" placeholder="最大字符200"></textarea>
+				<button type="button" class="mui-btn  mui-badge-light-blue w100">完成</button>
+			</div>
+		</div>
+		<script src="../../js/jquery-1.11.0.js"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/common.js" ></script>
+		<script>
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+			});
+			/*客户详情收展*/
+			$('.showHide').on('tap',function(){
+				var _i = $(this).find('i'),_span = $(this).find('span');
+				$(".customerDetail .message").slideToggle();
+				_span.text()=='展开'?_span.text('收起'):_span.text("展开")
+				_i.hasClass('mui-icon-arrowup')?_i.attr('class','mui-icon mui-icon-arrowdown'):_i.attr('class','mui-icon mui-icon-arrowup');
+			});
+			/*意向收展*/
+			$('.showHides').on('tap',function(){
+				var curHeight = $('.customerIntention').height();
+				var autoHeight = $('.customerIntention').css('height', 'auto').height();
+				if($(this).find('i').hasClass('mui-icon-arrowdown')){
+					$('.customerIntention').height(curHeight).animate({"height":(autoHeight+10)+'px'},200);
+					$(this).find('i').attr('class','mui-icon mui-icon-arrowup');
+					$(this).find('span').text("收起")
+				}else{
+					$('.customerIntention').animate({'height':'4rem'},200);
+					$(this).find('i').attr('class','mui-icon mui-icon-arrowdown');
+					$(this).find('span').text("展开")
+				}
+			});
+			OpenNewPage('#homeDetail','homeDetail','homeDetail.html');
+			/*右上菜单*/
+			mui('body').on('tap', '.mui-popover li a', function(e) {
+				if($(this).text() !='取消'){
+					console.log(1)
+					switch($(this).attr('data-type'))
+						{
+						    case '0':
+						       mui.openWindow({
+									url: '_www/html/Manager/customerPush.html',
+									id: 'customerPush',
+									styles: {
+										popGesture:"close"
+									},	
+									show: {
+										aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+										duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+									},
+									 waiting:{
+								      autoShow:true,//自动显示等待框，默认为true
+								      title:'主银，表着急...',//等待对话框上显示的提示内容
+								    }
+								})
+						       
+						        break;
+						    case '1':
+						     mui.openWindow({
+									url: '_www/html/Manager/setRemind.html',
+									id: 'setRemind',
+									styles: {
+										popGesture:"close"
+									},	
+									show: {
+										aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+										duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+									},
+									 waiting:{
+								      autoShow:true,//自动显示等待框，默认为true
+								      title:'主银，表着急...',//等待对话框上显示的提示内容
+								    }
+								})
+						        break;
+						    case '2':
+						     mui.openWindow({
+									url: '_www/html/Manager/updateCustomer.html',
+									id: 'updateCustomer',
+									styles: {
+										popGesture:"close"
+									},	
+									show: {
+										aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+										duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+									},
+									 waiting:{
+								      autoShow:true,//自动显示等待框，默认为true
+								      title:'主银，表着急...',//等待对话框上显示的提示内容
+								    }
+								})
+						        break;
+						    case '3':
+						    	 mui.openWindow({
+									url: '_www/html/Manager/houseMatching.html',
+									id: 'houseMatching',
+									styles: {
+										popGesture:"close"
+									},	
+									show: {
+										aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+										duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+									},
+									 waiting:{
+								      autoShow:true,//自动显示等待框，默认为true
+								      title:'主银，表着急...',//等待对话框上显示的提示内容
+								    }
+								})
+						        break;
+						      case '4':
+						    	 mui.openWindow({
+									url: '_www/html/Manager/turnedIn.html',
+									id: 'turnedIn',
+									styles: {
+										popGesture:"close"
+									},	
+									show: {
+										aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+										duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+									},
+									 waiting:{
+								      autoShow:true,//自动显示等待框，默认为true
+								      title:'主银，表着急...',//等待对话框上显示的提示内容
+								    }
+								})
+						        break;
+						    case '5':
+						    	 mui.confirm('是否确认转成交', ' ', ["取消","确认"], function(e) {
+									if (e.index == 1) {
+										mui.toast('成功')
+									} else {
+										
+									}
+								})
+							
+						        break;
+						    default:
+						}
+				}
+			});
+			/*意向调整，带看，写跟进*/
+//			OpenNewPage("#writeFollow",'writeFollow','writeFollow.html')
+			OpenNewPage("#takeLook",'takeLook','takeLook.html')
+			OpenNewPage("#updateIntention",'updateIntention','updateIntention.html')
+			/*弹出写跟进事件*/
+			$('.says').on('tap',function(){
+				$(".bg").show();
+//				$(".bg textarea").focus();
+			});
+			$(".content").on('tap',function(e){
+				return false;
+			});
+			$(".bg").on('tap',function(e){
+				$(".bg").hide();
+				$(".bg textarea").blur();
+			});
+			$(".bg button").on('tap',function(e){
+				$(".bg").hide();
+				$(".bg textarea").blur();
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>修改客源</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/singlePage.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/updateCustomer.css"/>
+	</head>
+	<body class="mui-fullscreen">
+		<div id="app" class="mui-views">
+			<div class="mui-view">
+				<div class="mui-navbar">
+				</div>
+				<div class="mui-pages">
+				</div>
+			</div>
+		</div>
+		<div id="default" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">完善客户信息</h1>	
+			</div>
+			<nav class="mui-bar mui-bar-tab">
+				<button type="button" class="mui-btn mui-btn-block" id="save">提交保存</button>
+			</nav>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="updateCusBox">
+							<h4 class="title">基本信息</h4>
+							<div class="mui-input-row">
+								<a href="#customerType">
+									<label><i class="must">*</i>客户类型：</label>
+									<input type="text" name="customerType" readonly value="租赁/住宅/商业"  class="mui-text-right" placeholder="请选择">
+								</a>
+							</div>
+							<div class="mui-input-row">
+								<label><i class="must">*</i>客户姓名：</label>
+								<input type="text" name="mating" value="张三"  class="mui-text-right" placeholder="请选择">
+							</div>
+							<div class="mui-input-row">
+								<a href="#dengji">
+								<label><i class="must">*</i>客户等级：</label>
+								<input readonly type="text" name="dengji" class="mui-text-right" placeholder="请选择">
+								</a>
+							</div>
+							<div class="mui-input-row">
+								<label><i class="must">*</i>联系电话：</label>
+								<input type="text" name="section" value="17610600599"  class="mui-text-right" placeholder="请选择">
+							</div>
+							<div class="mui-input-row phonebox">
+								<a class="mui-badge mui-badge-inverted add-phone">添加联系方式</a>
+							</div>
+							<div class="mui-input-row">
+								<a href="#use">
+									<label><i class="must">*</i>购房目的：</label>
+									<input type="text" name="use" readonly value="改善" class="mui-text-right" placeholder="请选择">
+								</a>
+							</div>
+							<div class="mui-input-row">
+								<label><i class="must">*</i>性别：</label>
+								<div class="mui-switch mui-pull-right">
+								  <div class="mui-switch-handle"></div>
+								</div>
+							</div>
+							<div class="mui-input-row">
+								<a href="#habitable">
+									<label><i class="must">*</i>居室：</label>
+									<input type="text" name="habitable" value="三居室"  readonly class="mui-text-right" placeholder="请选择">
+								</a>
+							</div>
+							<div class="mui-input-row">
+								<a href="#section">
+									<label><i class="must">*</i>价格区间：</label>
+									<input type="text" name="section" readonly value="100-150万"  class="mui-text-right" placeholder="请选择">
+								</a>
+							</div>
+						</div>
+						<div class="perfectBox">
+							<h4 class="title">完善信息</h4>
+							<div class="mui-input-row">
+								<a href="#intention">
+									<label>意向购买社区：</label>
+									<input type="text" name="intention" readonly  class="mui-text-right" placeholder="请选择">
+								</a>
+							</div>
+							<div class="mui-input-row">
+								<a href="#customerSource">
+									<label>客户来源：</label>
+									<input type="text" name="customerSource" readonly class="mui-text-right" placeholder="请选择">
+								</a>
+							</div>
+							<div class="mui-input-row">
+								<a href="#type">
+									<label>贷款记录：</label>
+									<input type="text" name="type" readonly class="mui-text-right" placeholder="请选择">
+								</a>
+							</div>
+							<div class="mui-input-row">
+								<a href="#type">
+									<label>购房资格：</label>
+									<input type="text" name="type" readonly class="mui-text-right" placeholder="请选择">
+								</a>
+							</div>
+							<div class="mui-input-row">
+								<a href="#type">
+									<label>客户住址：</label>
+									<input type="text" name="type" class="mui-text-right" placeholder="请输入">
+								</a>
+							</div>
+							<div class="mui-input-row">
+								<a href="#type">
+									<label>客户喜好：</label>
+									<input type="text" name="type" class="mui-text-right" placeholder="请输入">
+								</a>
+							</div>
+							<div class="mui-input-row">
+								<a href="#type">
+									<label>家庭成员：</label>
+									<input type="text" name="type" class="mui-text-right" placeholder="请输入">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="customerType" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">客户类型</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+						    <li class="mui-table-view-cell">商业	</li>
+						    <li class="mui-table-view-cell">租赁	</li>
+						    <li class="mui-table-view-cell">买卖</li>
+					   </ul>
+					 </div>
+				</div>
+			</div>
+		</div>
+		<div id="use" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">购房目的</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+						    <li class="mui-table-view-cell">改善</li>
+						    <li class="mui-table-view-cell">上学</li>
+						    <li class="mui-table-view-cell">投资</li>
+					   </ul>
+					 </div>
+				</div>
+			</div>
+		</div>
+		<div id="habitable" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">居室</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+						    <li class="mui-table-view-cell">不限	</li>
+						    <li class="mui-table-view-cell">1室</li>
+						    <li class="mui-table-view-cell">2室</li>
+						    <li class="mui-table-view-cell">3室</li>
+						    <li class="mui-table-view-cell">4室</li>
+						    <li class="mui-table-view-cell">5室</li>
+						    <li class="mui-table-view-cell">5室以上</li>
+					   </ul>
+					 </div>
+				</div>
+			</div>
+		</div>
+		<div id="section" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">价格区间</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+						    <li class="mui-table-view-cell">不限	</li>
+						    <li class="mui-table-view-cell">50万以下	</li>
+						    <li class="mui-table-view-cell">50-100万</li>
+						    <li class="mui-table-view-cell">100-150万</li>
+						    <li class="mui-table-view-cell">150-200万</li>
+						    <li class="mui-table-view-cell">200万以上</li>
+					   </ul>
+					 </div>
+				</div>
+			</div>
+		</div>
+		<div id="dengji" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">客户等级</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+						    <li class="mui-table-view-cell">A</li>
+						    <li class="mui-table-view-cell">B</li>
+						    <li class="mui-table-view-cell">C</li>
+					   </ul>
+					 </div>
+				</div>
+			</div>
+		</div>
+		<div id="intention" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">意向购买社区</h1>
+			</div>
+			<div class="mui-page">
+				<div class="searchBox">
+					<div class="mui-row">
+						<div class="mui-col-xs-12">
+							<input type="text" placeholder="楼盘名称" />
+						</div>
+						<!--<div class="mui-col-xs-2">
+							<button type="button" class="mui-btn">搜索</button>
+						</div>-->
+					</div>
+				</div>
+				<div class="mui-scroll-wrapper" style="top: 54px;">
+					<div class="mui-scroll">
+						<div class="historyBox">
+							<h4 class="title">历史选择记录</h4>
+							<ul class="mui-table-view">
+							    <li class="mui-table-view-cell">
+							    	<span>宣海家园小区</span>
+							    	<span class="mui-pull-right"><i>30</i>套</span>
+							    </li>
+							    <li class="mui-table-view-cell">
+							    	<span>北京像素小区</span>
+							    	<span class="mui-pull-right"><i>19</i>套</span>
+							    </li>
+							     <li class="mui-table-view-cell">
+							     	<span>北京通州新建村</span>
+							    	<span class="mui-pull-right"><i>10</i>套</span>
+							    </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="customerSource" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">客户来源</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+						    <li class="mui-table-view-cell">来访</li>
+						    <li class="mui-table-view-cell">网络端口</li>
+						    <li class="mui-table-view-cell">驻守</li>
+						    <li class="mui-table-view-cell">转介绍</li>
+						    <li class="mui-table-view-cell">园内宣传</li>
+						    <li class="mui-table-view-cell">回访</li>
+						    <li class="mui-table-view-cell">展会</li>
+					   </ul>
+					 </div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/mui.view.js "></script>
+	<script type="text/javascript">
+		mui.init({
+				swipeBack: true, //启用右滑关闭功能
+			});
+			mui('.mui-scroll-wrapper').scroll();
+			var viewApi = mui('#app').view({
+				defaultPage: '#default'
+			});
+			var view = viewApi.view;
+			(function($) {
+				//处理view的后退与webview后退
+				var oldBack = $.back;
+				$.back = function() {
+					if (viewApi.canBack()) { //如果view可以后退，则执行view的后退
+						viewApi.back();
+					} else { //执行webview后退
+						oldBack();
+					}
+				};
+				//监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
+				//第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
+				view.addEventListener('pageBeforeShow', function(e) {
+					//				console.log(e.detail.page.id + ' beforeShow');
+				});
+				view.addEventListener('pageShow', function(e) {
+					//				console.log(e.detail.page.id + ' show');
+				});
+				view.addEventListener('pageBeforeBack', function(e) {
+					//				console.log(e.detail.page.id + ' beforeBack');
+				});
+				view.addEventListener('pageBack', function(e) {
+					//				console.log(e.detail.page.id + ' back');
+				});
+			})(mui);
+			
+			//添加联系人
+			$("#default").on('tap','.add-phone',function(){
+				if($(".phonebox .delphonegroup").length>=5){
+					mui.toast("最多添加五个联系人");
+				}else{
+					var str='<div class="delphonegroup"><a class="mui-icon mui-icon-minus"></a>';
+					str+='<div class="nameGroup mui-clearfix"><label>姓名：</label>';
+					str+='<input type="text" class="mui-text-right" placeholder="请输入"></div>';
+					str+='<div class="phoneGroup mui-clearfix"><label>联系方式：</label>';
+					str+='<input type="text" class="mui-text-right" placeholder="请输入"></div>';
+					str+='<div class="relationGroup mui-clearfix"><label>关系：</label>';
+					str+='<input type="text" class="mui-text-right" placeholder="请输入"></div></div>';
+					$('.phonebox').append(str);
+				}
+			});
+			$(".phonebox").on('tap','.delphonegroup .mui-icon-minus',function(){
+				$(this).parent(".delphonegroup").remove();
+			});
+			
+			//跳转选择方法
+			function selValue(id){
+				$('#'+id).on("tap",'.mui-table-view-cell',function(){
+					$("input[name="+id+"]").val($(this).text());
+					setTimeout(function(){
+						viewApi.back();
+					},250);
+				});
+			}
+			selValue('customerType');
+			selValue('use');
+			selValue('habitable');
+			selValue('section');
+//			selValue('intention');
+			selValue('customerSource');
+			selValue('dengji');
+			
+			$('#intention').on("tap",'.mui-table-view-cell',function(){
+				$("input[name=intention]").val($(this).find('span').eq(0).text());
+				setTimeout(function(){
+					viewApi.back();
+				},250);
+			});
+			//提交保存
+			$("#default").on('tap','#save',function(){
+				mui.toast('提交成功');
+			});
+	</script>
+</html>

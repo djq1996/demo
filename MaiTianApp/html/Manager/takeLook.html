@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>带看</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/singlePage.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/takeLook.css"/>
+		<style type="text/css">
+			#default .takeLookContent ul .mui-table-view-cell label{
+				float: left;
+				width: 25%;
+				line-height: 40px;
+				color: #555;
+			}
+			#default .takeLookContent ul .mui-table-view-cell input,#default .takeLookContent ul .mui-table-view-cell textarea{
+				float: left;
+				width: 75%;
+				border: 0;
+				margin-bottom: 0;
+				font-size: 14px;
+			}
+			#default .takeLookContent ul .mui-table-view-cell textarea{
+				min-height: 20px;
+			}
+			#default .takeLookContent ul .mui-table-view-cell{
+				padding: 0 15px;
+			}
+			h4.title{
+				background: #EAEAEA;
+			}
+			.delTakeLook{
+				color: #f56140;
+			}
+			.radioGroup .mui-radio{
+		    	width: 70px;
+		    	float: left;
+		    }
+		    .radioGroup label{
+		    	width: 100%;
+		    }
+		    .withThe{
+		    	color: #555;
+		    	font-size: 14px;
+		    }
+		    .withThe > label{
+		    	width: 27%;
+		    }
+		</style>
+	</head>
+	<body class="mui-fullscreen">
+		<div id="app" class="mui-views">
+			<div class="mui-view">
+				<div class="mui-navbar">
+				</div>
+				<div class="mui-pages">
+				</div>
+			</div>
+		</div>
+		<div id="default" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">带看</h1>
+				<a class="mui-icon mui-icon-plus mui-pull-right" id="addtakeLook"></a>
+			</div>
+			<nav class="mui-bar mui-bar-tab">
+				<button type="button" class="mui-btn mui-btn-block" id="save">提交保存</button>
+			</nav>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+							<div class="takeLookBox">
+								<div class="title mui-clearfix">
+									<p class="mui-text-left">客户姓名：<span>董先生</span></p>
+									<p class="mui-text-right">客户等级：<span>A</span></p>
+								</div>
+								<form class="takeLookContent">
+									
+								</form>
+								<h4 class="title" style="background: #efeff4;">添加带看</h4>
+								<ul class="mui-table-view">
+								    <li class="mui-table-view-cell">
+								        <a class="mui-navigate-right" href="#selHouse">
+											<label>带看小区：</label>
+											<p class="mui-pull-right">请选择</p>
+											<input type="hidden" name="selHouse" />
+								        </a>
+								    </li>
+								    <li class="mui-table-view-cell">
+								        <a class="mui-navigate-right" href="#selTower">
+											<label>带看楼栋：</label>
+											<p class="mui-pull-right">请选择</p>
+											<input type="hidden" name="selTower" />
+								        </a>
+								    </li>
+								    <li class="mui-table-view-cell">
+								        <a class="mui-navigate-right" id="selRoom">
+											<label>带看房间：</label>
+											<p class="mui-pull-right">请选择</p>
+											<input type="hidden" name="selRoom"/>
+								        </a>
+								    </li>
+								</ul>
+								<!--<div class="mui-input-row withThe">
+									<label class="">陪看人：</label>
+									<div class="radioGroup">
+										<div class="mui-radio mui-left">
+											<label>店长</label>
+											<input name="tixingType" value="1"  type="radio">
+										</div>
+										<div class="mui-radio mui-left">
+											<label>跟单人</label>
+											<input name="tixingType" value="0"  type="radio">
+										</div>
+									</div>
+								</div>-->
+							</div>
+							<div class="contentBox">
+								<div class="mui-input-row remark">
+									<label class="mui-text-left">备注：</label>
+									<textarea class="selBeizhu" rows="" cols="" placeholder="请输入带看内容"></textarea>
+								</div>
+								<!--<div class="mui-input-row result">
+									<label class="mui-text-left" style="width: 32%;">跟单人带看：</label>
+									<div class="radioGroup">
+										<div class="mui-row">
+											<div class="mui-col-xs-3" >
+												<div class="mui-radio mui-left">
+													<label>是</label>
+													<input name="type"  type="radio">
+												</div>
+											</div>
+											<div class="mui-col-xs-3" >
+												<div class="mui-radio mui-left">
+													<label>否</label>
+													<input name="type" type="radio">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>-->
+								<div class="mui-input-row result">
+									<label class="mui-text-left">带看结果：</label>
+									<div class="radioGroup">
+										<div class="mui-row">
+											<div class="mui-col-xs-3" >
+												<div class="mui-radio mui-left">
+													<label>有意向</label>
+													<input name="type"  type="radio">
+												</div>
+											</div>
+											<div class="mui-col-xs-3" >
+												<div class="mui-radio mui-left">
+													<label>无意向</label>
+													<input name="type" type="radio">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="selHouse" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">选择小区</h1>
+			</div>
+			<div class="mui-page">
+				<div class="searchBox">
+					<div class="mui-row">
+						<div class="mui-col-xs-12">
+							<input type="text" placeholder="楼盘名称" />
+						</div>
+						<!--<div class="mui-col-xs-2">
+							<button type="button" class="mui-btn">搜索</button>
+						</div>-->
+					</div>
+				</div>
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="historyBox">
+							<h4 class="title">历史选择记录</h4>
+							<ul class="mui-table-view">
+							   <li class="mui-table-view-cell">宣海家园小区
+							    	<span class="mui-pull-right"><i>30</i>套</span>
+							    </li>
+							    <li class="mui-table-view-cell">北京像素小区
+							    	<span class="mui-pull-right"><i>19</i>套</span>
+							    </li>
+							     <li class="mui-table-view-cell">北京通州新建村
+							    	<span class="mui-pull-right"><i>10</i>套</span>
+							    </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="selTower" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">选择楼栋</h1>
+			</div>
+			<div class="mui-page">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="historyBox">	
+							<ul class="mui-table-view">
+							    <li class="mui-table-view-cell">2栋1单元
+							    	<span class="mui-pull-right"><i>10</i>套</span>
+							    </li>
+							    <li class="mui-table-view-cell">3栋
+							    	<span class="mui-pull-right"><i>16</i>套</span>
+							    </li>
+							    <li class="mui-table-view-cell">2栋2单元
+							    	<span class="mui-pull-right"><i>12</i>套</span>
+							    </li>
+							    <li class="mui-table-view-cell">1栋B座
+							    	<span class="mui-pull-right"><i>40</i>套</span>
+							    </li>
+							    <li class="mui-table-view-cell">1栋C座
+							    	<span class="mui-pull-right"><i>33</i>套</span>
+							    </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/mui.view.js "></script>
+	<script src="../../js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true, //启用右滑关闭功能
+		});
+		mui('.mui-scroll-wrapper').scroll();
+		var viewApi = mui('#app').view({
+			defaultPage: '#default'
+		});
+		var view = viewApi.view;
+		(function($) {
+			//处理view的后退与webview后退
+			var oldBack = $.back;
+			$.back = function() {
+				if (viewApi.canBack()) { //如果view可以后退，则执行view的后退
+					viewApi.back();
+				} else { //执行webview后退
+					oldBack();
+				}
+			};
+			//监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
+			//第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
+			view.addEventListener('pageBeforeShow', function(e) {
+				//				console.log(e.detail.page.id + ' beforeShow');
+			});
+			view.addEventListener('pageShow', function(e) {
+				//				console.log(e.detail.page.id + ' show');
+			});
+			view.addEventListener('pageBeforeBack', function(e) {
+				//				console.log(e.detail.page.id + ' beforeBack');
+			});
+			view.addEventListener('pageBack', function(e) {
+				//				console.log(e.detail.page.id + ' back');
+			});
+		})(mui);
+		//保存
+		$("body").on('tap','#save',function(){
+			mui.toast('保存成功');
+			mui.openWindow({
+					url: '_www/html/Agent/customerDetail.html',
+					id: 'customerDetailAgent',
+					styles: {
+						popGesture:"close"
+					},	
+					show: {
+						aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+						duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					 waiting:{
+				      autoShow:true,//自动显示等待框，默认为true
+				      title:'主银，表着急...',//等待对话框上显示的提示内容
+				    }
+				})
+		});
+		//跳转选择方法
+		function selValue(id){
+			$('#'+id).on("tap",'.mui-table-view-cell',function(){
+				$("input[name="+id+"]").val($(this).text());
+				$("a[href=#"+id+"] p").text($(this).text());
+				setTimeout(function(){
+					viewApi.back();
+				},250);
+			});
+		};
+		selValue('selHouse');
+		selValue('selTower');
+		
+		//选择房间
+		$('body').on('tap','#selRoom',function(){
+			var picker = new mui.PopPicker({
+			    layer: 2
+			});
+			 picker.setData([{
+		        value: '110000',
+		        text: '1层',
+		        children: [{
+		                value: "110101",
+		                text: "101"
+		        }]
+		    }, {
+		        value: '120000',
+		        text: '2层',
+		        children: [{
+			        value: "120101",
+		            text: "201"
+		        }, {
+		            value: "120102",
+		            text: "202"
+		        }, {
+		            value: "120104",
+		            text: "203"
+		        }
+		        ]
+		    }]);
+			picker.show(function(SelectedItem) {
+				$("#selRoom p").text(SelectedItem[1].text);
+				$("#selRoom input[name=selRoom]").val(SelectedItem[1].text);
+			});
+		});
+		/*添加带看*/
+		
+		$("#addtakeLook").on("tap",function(){
+			var _i = $(".daikan").length+1;
+			var selRoomText = $("input[name=selRoom]").val()
+			var selTowerText = $("input[name=selTower]").val()
+			var selHouseText = $("input[name=selHouse]").val()
+			var selBeizhuText = $(".selBeizhu").val();
+			$(".takeLookContent").append('<div class="daikan"><h4 class="title">带看'+_i+'<i class="mui-icon mui-icon-minus delTakeLook"></i></h4><ul class="mui-table-view">'+
+									    '<li class="mui-table-view-cell">'+
+									    	'<label>带看小区：</label>'+
+									    	'<input type="text" name="" id="" value="'+selRoomText+'" readonly="readonly"/>'+
+									    '</li>'+
+									    '<li class="mui-table-view-cell">'+
+									    	'<label>带看楼栋：</label>'+
+									    	'<input type="text" name="" id="" value="'+selTowerText+'" readonly="readonly"/>'+
+									    '</li>'+
+									    '<li class="mui-table-view-cell">'+
+									    	'<label>带看房间：</label>'+
+									    	'<input type="text" name="" id="" value="'+selHouseText+'" readonly="readonly"/>'+
+									    '</li>'+
+									    '<li class="mui-table-view-cell">'+
+									    	'<label>带看结果：</label>'+
+									    	'<input type="text" name="" id="" value="'+'有意向'+'" readonly="readonly"/>'+
+									    '</li>'+
+									     '<li class="mui-table-view-cell">'+
+									    	'<label>备注：</label>'+
+									    	'<textarea name="" id="" placeholder="备注内容" value="" >'+selBeizhuText+'</textarea>'+
+									    '</li>'+
+								   '</ul></div>'
+								 );
+		});
+		$("body").on("tap",'.delTakeLook',function(){
+			$(this).parents('.daikan').remove();
+		})
+	</script>
+</html>

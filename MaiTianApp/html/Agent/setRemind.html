@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>设置提醒</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/setRemind.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-action-back mui-icon mui-icon-left-nav"></span>
+			<h1 class="mui-title">设置提醒</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<button type="button" class="mui-btn mui-btn-block" id="save">保存</button>
+		</nav>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="remindBox">
+						<div class="mui-input-row selDate">
+							<label class="mui-text-right">提醒时间：</label>
+							<input readonly type="text" name="needType" placeholder="请选择">
+						</div>
+						<div class="mui-input-row">
+							<label class="mui-text-right">类型：</label>
+							<div class="radioGroup">
+								<div class="mui-row">
+									<div class="mui-col-xs-3">
+										<div class="mui-radio mui-left">
+											<label>跟进</label>
+											<input name="type" checked="true" type="radio">
+										</div>
+									</div>
+									<div class="mui-col-xs-3">
+										<div class="mui-radio mui-left">
+											<label>带看</label>
+											<input name="type" type="radio">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mui-input-row">
+							<label class="mui-text-right">提醒内容：</label>
+							<textarea name="" rows="" cols="" placeholder="请输入提醒内容"></textarea>
+						</div>
+					</div>
+					<div class="acceptBox">
+						<h1><span class="mui-icon mui-icon-plus"></span><span style="margin-left: 5px;">添加接收人</span></h1>
+						<div class="box">
+							<ul class="mui-table-view">
+							    <li class="mui-table-view-cell ">
+							        <a class="mui-navigate-right">
+							        	<div class="mui-input-row">
+											<label class="mui-text-right">接收人：</label>
+											<input class="toRemindList" readonly type="text" placeholder="请选择">
+										</div>
+							        </a>
+							    </li>
+							</ul>
+						</div>
+					</div>
+			</div>
+		</div>
+		</div>
+	</body>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/mui.picker.min.js"></script>
+	<script type="text/javascript">
+		mui('.mui-scroll-wrapper').scroll({
+			deceleration: 0.0006
+		});
+		
+		//添加接收人
+		$(".acceptBox").on('tap','h1',function(){
+			var str='<li class="mui-table-view-cell"><a class="mui-navigate-right">';
+			str+='<div class="mui-input-row"><label class="mui-text-right"><i class="mui-icon mui-icon-minus dellLinkman"></i>接收人：</label>';
+			str+='<input class="toRemindList" readonly="" type="text" name="needType" placeholder="请选择"></div></a></li>';
+			$(".acceptBox .box .mui-table-view").append(str);
+		});
+		$(".acceptBox").on('tap','.dellLinkman',function(){
+			$(this).parents('li').remove()
+		})
+		//时间选择
+		$('.remindBox').on('tap','.selDate',function(){
+			var dtpicker = new mui.DtPicker({
+			    type: "date",//设置日历初始视图模式 
+			    beginDate: new Date(2015, 04, 25),//设置开始日期 
+			    endDate: new Date(2016, 04, 25),//设置结束日期 
+			    labels: ['年', '月', '日'],//设置默认标签区域提示语 
+			}) 
+			dtpicker.show(function(e) {
+			    console.log(e);
+			    $(".selDate input").val(e);
+			}) 
+		});
+		//保存
+		$("body").on('tap','#save',function(){
+			mui.toast('保存成功');
+		});
+		//页面跳转传值
+		function OpenNewPage(ele,id,pageurl) {
+			mui('body').on('tap',ele, function() {
+				$(this).attr('isClick','true').siblings().removeAttr('isClick');
+				mui.openWindow({
+					url: pageurl,
+					id: id,
+					styles: {
+						popGesture:"close"
+					},	
+					show: {
+						aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+						duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					 waiting:{
+				      autoShow:true,//自动显示等待框，默认为true
+				      title:'主银，表着急...',//等待对话框上显示的提示内容
+				    }
+				})
+			})
+		}
+		OpenNewPage(".toRemindList",'remindList','remindList.html');
+		mui.plusReady(function(){
+			//返回回来要执行的方法   
+            function fun1(e){   
+                var val=e.detail.inputVal;
+                $('.acceptBox .box .mui-table-view-cell[isClick=true]').find('input').val(val);
+            }   
+            //自定义窗体事件  doit 要和b页面定义的 事件名称一致   
+            window.addEventListener('doit',fun1); 
+		});
+	</script>
+</html>

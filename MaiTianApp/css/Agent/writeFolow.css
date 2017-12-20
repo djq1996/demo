@@ -1,0 +1,61 @@
+.mui-scroll-wrapper{
+	top: 44px;
+}
+.followBox{
+	background: #fff;
+}
+.followBox .title{
+	padding: 0 15px;
+    border-bottom: 1px solid #eaeaea;
+}
+.followBox .title p {
+    color: #555;
+    float: left;
+    width: 50%;
+    margin: 0;
+    line-height: 40px;
+}
+.followBox .mui-input-row label{
+	font-size: 14px;
+}
+.followBox .mui-radio.mui-left label{
+    padding: 0;
+    padding-left: 25px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+.followBox .followWay>label{
+	padding: 0;
+    padding-left: 15px;
+    font-size: 14px;
+    height: 40px;
+    width: 25%;
+    line-height: 40px;
+}
+.mui-bar .mui-btn-block{
+    color: #fff;
+    background: #f56140;
+}
+.mui-bar-tab{
+	box-shadow: 1px -1px 1px #ccc;
+}
+.mui-row .mui-btn{
+	padding: 3px 6px;
+	vertical-align: middle;
+}
+.mui-row{
+    line-height: 40px;
+    padding: 0 15px;
+    border-bottom: 1px solid #eaeaea;
+}
+.mui-row label{
+	font-size: 14px;
+}
+.mui-input-row textarea{
+	width: 94%;
+    height: 6rem;
+    font-size: 14px;
+    margin: .4rem;
+    border: none;
+}

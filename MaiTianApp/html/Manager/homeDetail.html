@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>房源详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.css">
+<!--		<link rel="stylesheet" type="text/css" href="../../css/imageviewer.css"/>
+-->		<link rel="stylesheet" type="text/css" href="../../css/icons-extra.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/hosing-detail.css"/>
+		<style>
+			.bg{
+				position: fixed;
+				display: none;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+				background: url(../../img/share.jpg);
+				background-size:100% 100% ;
+				z-index: 999;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="box-shadow: none;background: transparent;">
+			<button type="button" class="mui-text-left mui-action-back mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+				<span class="mui-icon mui-icon-left-nav" style="color: #fff;"></span>查看房源
+			</button>
+			<a href="javascript:;" id="share" class="mui-icon mui-icon-redo mui-pull-right" style="color: #fff;"></a>
+		</header>
+		<nav class="mui-bar mui-bar-tab" style="height: 44px;">
+			<button type="button" class="mui-btn mui-btn-block" id="love" style="background: #ff6633;width: 92%;">关注</button>
+		</nav>
+		<div class="mui-content">
+			<div class="bg"></div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="mui-collapse-content">
+						<div id="slider" class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+								<div class="mui-slider-item mui-slider-item-duplicate">
+									<a href="#">
+										<img src="../../img/home.jpg" />
+									</a>
+								</div>
+								<!-- 第一张 -->
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="../../img/home.jpg" data-content="厨房" data-preview-src="" data-preview-group="4"/>
+									</a>
+								</div>
+								<!-- 第二张 -->
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="../../img/home.jpg" data-content="客厅" data-preview-src="" data-preview-group="4"/>
+									</a>
+								</div>
+								<!-- 第三张 -->
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="../../img/home.jpg" data-content="卫生间" data-preview-src="" data-preview-group="4"/>
+									</a>
+								</div>
+								<!-- 第四张 -->
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="../../img/home.jpg" data-content="阳台" data-preview-src="" data-preview-group="4"/>
+									</a>
+								</div>
+								<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+								<div class="mui-slider-item mui-slider-item-duplicate">
+									<a href="#">
+										<img src="../../img/home.jpg"/>
+									</a>
+								</div>
+							</div>
+							<div class="mui-slider-indicator">
+								<div class="mui-indicator mui-active" style="display: none;"></div>
+								<div class="mui-indicator" style="display: none;"></div>
+								<div class="mui-indicator" style="display: none;"></div>
+								<div class="mui-indicator" style="display: none;"></div>
+								<div class="djq"></div>
+							</div>
+						</div>
+					</div>
+					<img src="../../img/homeDetail.png" style="width: 100%;"/>
+					<div class="role-message jueseMsg">
+							<h4 class="h4-title">相似房源</h4>
+							<div class="role-box mui-clearfix">
+								<div class="role-message-img mui-pull-left" style="width: 4rem;">
+									<img src="../../img/home3.jpg" onerror="this.onerror=null; this.src='../../img/默认图.png'"/>
+								</div>
+								<div class="role-message-text mui-pull-left">
+									<p class="mui-ellipsis">
+										<b style="font-weight: normal;font-size: 15px;color: #000;margin-right: 5px;">宣海家园/3号楼/4单元/1502室</b>						
+									</p>
+									<p>2室1厅1厨1卫   145㎡</p>
+									<p class="js_telNumber">200万</p>
+								</div>
+								<a href="" class="mui-icon mui-icon-arrowright"></a>
+							</div>
+							<div class="role-box mui-clearfix">
+								<div class="role-message-img mui-pull-left" style="width: 4rem;">
+									<img src="../../img/home2.jpg" onerror="this.onerror=null; this.src='../../img/默认图.png'"/>
+								</div>
+								<div class="role-message-text mui-pull-left">
+									<p class="mui-ellipsis">
+										<b style="font-weight: normal;font-size: 15px;color: #000;margin-right: 5px;">宣海家园/3号楼/4单元/1502室</b>						
+									</p>
+									<p>2室1厅1厨1卫   145㎡</p>
+									<p class="js_telNumber">200万</p>
+								</div>
+								<a href="" class="mui-icon mui-icon-arrowright"></a>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/jquery-1.11.0.js"></script>
+		<script src="../../js/mui.min.js"></script>
+		<!--<script src="../../js/mui.zoom.js"></script>-->
+		<!--<script src="../../js/mui.previewimage.js"></script>-->
+		<script>
+			mui.init({
+				swipeBack:true
+			});
+//			mui.previewImage();
+		</script>
+		<script type="text/javascript">
+			mui('.mui-bar').on('tap','#love',function(){
+				mui.toast('关注成功');
+			});
+			$('.bg').on('click',function(){
+				$(this).fadeOut()
+			})
+			$('#share').on('click',function(){
+				$('.bg').fadeIn()
+				console.log(1)
+			})
+			$(function(){
+				mui('.mui-scroll-wrapper').scroll({
+					deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+				});
+				//角色信息调用电话接口
+				$('.jueseMsg').on('tap','.mui-icon-phone',function(){
+					plus.device.dial($(this).prev().children('.js_telNumber').text(), true );
+				});
+
+				//基本信息显示更多
+				$('.ask-to-buy').on('tap','.down',function(){
+					var curHeight = $('.topMessage').height();
+					var autoHeight = $('.topMessage').css('height', 'auto').height();
+					if($(this).children('span').hasClass('mui-icon-arrowdown')){
+						$('.topMessage').height(curHeight).animate({"height":autoHeight+'px'},200);
+						$('.down span').attr('class','mui-icon mui-icon-arrowup');
+					}else{
+						$('.topMessage').animate({'height':'6.9rem'},200);
+						$('.down span').attr('class','mui-icon mui-icon-arrowdown');
+					}
+				});
+				//轮播图
+				$(".djq").text(($('.mui-slider-item').index()+1)+'/'+$(".mui-slider-indicator .mui-indicator").length);
+				document.querySelector('.mui-slider').addEventListener('slide', function(event) {
+					var current_num = event.detail.slideNumber;
+					$('.djq').text((current_num+1)+'/'+$(".mui-slider-indicator .mui-indicator").length);
+				});
+			});
+			mui.plusReady(function(){
+				//获取传值
+				var self = plus.webview.currentWebview();
+				//设置标题
+				$('.mui-title').text(self.text);
+			});
+			
+			
+			function OpenNewPage(id, pageurl) {
+				mui('body').on('tap', id, function() {
+					mui.openWindow({
+						url: pageurl,
+						id: id,
+						show: {
+							aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+							duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+						},
+					})
+				})
+			}
+			OpenNewPage("#toAddFollow",'_www/html/myCustomers/add-follow-up.html');
+			OpenNewPage('#toaddPic','_www/html/myHousingResources/addPic.html');
+			OpenNewPage("#toapplyWritten",'_www/html/myHousingResources/applyWrittenEntrust.html');
+ 	  	
+ 	  	/*var scroll = mui('.mui-scroll-wrapper').scroll();
+	    document.querySelector('.mui-scroll-wrapper' ).addEventListener('scroll', function (e ) { 
+	      if(scroll.y<=-113){
+	      	$('header').addClass('headerAnimate');
+	      }else{
+      		$('header').removeClass('headerAnimate');
+	      }
+	    }) */
+	
+		</script>
+	</body>
+
+</html>

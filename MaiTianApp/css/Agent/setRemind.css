@@ -1,0 +1,99 @@
+.mui-bar .mui-btn-block{
+    color: #fff;
+	background: #f56140;
+}
+.mui-bar-tab{
+	-webkit-box-shadow: 1px -1px 1px #ccc;
+	box-shadow: 1px -1px 1px #ccc;
+}
+.mui-scroll-wrapper{
+	top: 44px;
+	bottom: 50px;
+}
+.mui-input-row{
+    border-bottom: 1px solid #eaeaea;
+}
+.mui-input-row label{
+	padding-right: 0;
+    width: 25%;
+    font-size: 14px;
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+}
+.mui-input-row label ~ input{
+	width: 75%;
+	font-size: 14px;
+}
+.mui-radio input[type='radio']:before{
+	font-size: 23px;
+}
+.mui-radio.mui-left input[type='radio']{
+	left: 0;
+}
+.mui-radio input[type='radio']{
+	top: 50%;
+	transform: translateY(-50%);
+	width: 23px;
+	height: 23px;
+}
+.mui-radio.mui-left label{
+	padding-left: 25px;
+	padding-right: 0;
+}
+.mui-input-row label ~ textarea{
+	width: 70%;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 0;
+    padding-left: 5px;
+    min-height: 50px;
+    margin: 10px 0;
+    float: left;
+}
+
+.remindBox{
+	background:#fff;
+}
+.acceptBox h1{
+	font-size: 14px;
+	padding-left: 20px;
+	display: inline-block;
+}
+.acceptBox h1 span{
+	color: #ff6633;
+	font-weight: normal;
+	display: inline-block;
+	vertical-align: middle;
+}
+.acceptBox .box{
+	background: #fff;
+}
+.acceptBox .box .mui-input-row label{
+	/*color:#888;*/
+}
+.acceptBox .box .mui-input-row label ~ input::-webkit-input-placeholder{
+	color: #555;
+}
+.acceptBox .box .mui-table-view-cell > a:not(.mui-btn){
+	padding: 0;
+}
+.acceptBox .box .mui-input-row{
+	border:0;
+}
+.acceptBox .box .mui-table-view-cell:after{
+	left: 0;
+}
+.radioGroup{
+	width: 75%;
+	float: right;
+}
+.radioGroup label{
+	width: auto;
+}
+.dellLinkman{
+	color: #FF6633;
+	vertical-align: middle;
+	margin-top: -2px;
+	padding-right: 3px;
+}

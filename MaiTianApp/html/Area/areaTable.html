@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>区域量化表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/Area/areaTable.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">区域量化表</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll" style="background: #fff;">
+					<div id="container" style="min-width: 310px; height: 400px; margin:30px auto 0"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/highstock.js" ></script>
+	<script type="text/javascript">
+		mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		/*点击进入列表*/
+		$("body").on("tap",'.xbiaoqian',function(){
+			var _txt = $(this).text()
+			mui.openWindow({
+				url:'_www/html/Agent/statementCustomerList.html',
+				styles: {
+					popGesture:"close"
+				},
+				show: {
+					aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+					duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+				},
+				extras:{
+					titleText:_txt
+				}
+			})
+		})
+		
+		$(function () {
+		    $('#container').highcharts({
+		        chart: {
+		            type: 'column'
+		        },
+		        title: {
+		            text: ''
+		        },
+		        legend: {
+		             itemWidth: 150,
+		             align:'left',
+		              padding:10,
+		             labelFormatter: function() {
+					   /*
+					    *  格式化函数可用的变量：this， 可以用 console.log(this) 来查看包含的详细信息
+					    *  this 代表当前数据列对象，所以默认的实现是 return this.name 
+					    */
+					    var shuju = null;
+					   for(var i=0;i<this.yData.length;i++){
+					   	 shuju+= this.yData[i]
+					   }
+					    return this.name + '('+shuju+')'
+					},
+					itemMarginBottom: 10
+		        },
+		        xAxis: {
+		            categories: [
+		                '新增量',
+		                '有效量',
+		                '跨区带看量',
+		                '总量'
+		            ],
+		            crosshair: true,
+		            labels: {
+		                formatter: function () {
+		                        return '<a href="javascript:;" class="xbiaoqian">'+this.value+'</a>'
+		                }
+		            },
+		            max:1
+		        },
+		        yAxis: {
+		            title: {
+		                text: ''
+			            }
+			    },
+			    credits: {  
+		            enabled: false     //不显示LOGO 
+		        },
+		        scrollbar : {
+		            enabled:true
+		        },
+		        plotOptions: {
+		        	 series: {
+		                events: {
+		                    legendItemClick: function(e) {
+		                        // return false 即可禁止图例点击响应
+		                        console.log()
+		                        mui.openWindow({
+									url:'_www/html/Agent/statementCustomerList.html',
+									styles: {
+										popGesture:"close"
+									},
+									show: {
+										aniShow: 'pop-in',
+										duration: '300',
+									},
+									extras:{
+										titleText:this.name
+									}
+								})
+		                        return false;
+		                    },
+		                     click: function(e) {
+//		                     	console.log(e.point)
+			                    mui.openWindow({
+									url:'_www/html/Agent/statementCustomerList.html',
+									styles: {
+										popGesture:"close"
+									},
+									show: {
+										aniShow: 'pop-in',
+										duration: '300',
+									},
+									extras:{
+										titleText:e.point.category+'-'+this.name
+									}
+								})
+		                        return false;
+			                } 
+		                }
+		           },
+		            column: {
+		            	dataLabels: {
+		                    enabled: true          // 开启数据标签
+		                },
+		                pointPadding: 0.2,
+		                pointWidth: 15
+		            }
+		        },
+		        series: [{
+		            name: '租赁',
+		            data: [20,10,12,19]
+		        }, {
+		            name: '买卖',
+		            data: [22, 15,17,15]
+		        }
+//		        , {
+//		            name: '跟单人陪看量',
+//		            data: [22, 15,17,15]
+//		        }
+		        ]
+		    });
+		});
+
+	</script>
+</html>

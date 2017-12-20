@@ -1,0 +1,252 @@
+.mui-content {
+	height: 100vh;
+	background: #fff;
+}
+
+.mui-content,
+input,
+select,
+textarea,
+button {
+	font-size: 14px;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+ul li {
+	list-style: none;
+}
+
+
+/*顶部选项卡*/
+
+.rent-purchase {
+	width: 6.1rem;
+	line-height: 25px;
+	height: 26px;
+	margin: .5rem auto;
+	border: 1px solid #ff6633;
+	font-size: 14px;
+	color: #ff6633;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.rent-purchase a {
+	display: block;
+	float: left;
+	width: 3rem;
+}
+
+.rent-purchase a.active {
+	background: #ff6633;
+	color: #fff;
+}
+
+
+/*搜索*/
+
+.customerSerach input {
+	width: 94%;
+	margin: 10px auto;
+	display: block;
+	background: #fff;
+	border: 1px solid #ff6633;
+	font-size: 13px;
+	height: 28px;
+}
+
+
+/*筛选*/
+
+.cutomerFilter {
+	position: relative;
+	color: #666;
+}
+
+.cutomerFilter .active {
+	color: #FF6633;
+}
+
+.cutomerFilter>ul>li {
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+
+.cutomerFilter>ul>li:not(:last-child) {
+	border-right: 1px solid #ddd;
+}
+
+.cutomerFilter>ul>li a {
+	color: #666;
+}
+
+.cutomerFilter>ul>li a .mui-icon {
+	font-size: 14px;
+	margin-top: -3px;
+	vertical-align: middle;
+}
+.cutomerFilterName input{
+	display: inline-block;
+	width: 55px;
+	padding: 5px;
+	height: 30px;
+	margin: 0 5px 10px;
+}
+.cutomerFilterName button{
+	line-height: 1;
+}
+.cutomerFilterName {
+	border: 1px solid #ddd;
+	border-left: none;
+	border-radius: none;
+	width: 100%;
+	position: absolute;
+	top: 28px;
+	left: 0;
+	z-index: 999;
+	background: #fff;
+	text-align: left;
+	display: none;
+	padding: 0 .5rem;
+}
+
+.cutomerFilterName li:not(:last-child) {
+	border-bottom: 1px solid #ddd;
+}
+
+.cutomerFilterName li {
+	padding: 8px 0;
+}
+
+
+/*黑背景*/
+
+.bg {
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, .4);
+	position: fixed;
+	top: 6.15rem;
+	z-index: 100;
+	display: none;
+}
+/*列表样式*/
+#customerList{
+	border-top: 1px solid #ddd;
+}
+#customerList b{
+	font-weight: normal;
+	color: #000;
+	/*font-size:14px;*/
+}
+#customerList p{
+	margin-bottom: 0;
+	font-size: 12px;
+	height: 21px;
+    line-height: 21px;
+}
+#customerList li{
+	padding:6px 0 6px .3rem;
+}
+#customerList li p .mui-icon{
+	font-size: 26px;
+}
+#customerList li{position: relative;}
+#customerList li > a{
+	color: #FF6633;
+    position: absolute;
+    right: 4px;
+    top: 25px;
+}
+#customerList li:not(:last-child){
+	border-bottom: 1px solid #ddd;
+}
+#customerList li .customerImg{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 3px;
+}
+#customerList li .customerImg img{
+	width: 100%;
+}
+#customerList li .customerImg p{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size:18px;
+	color: #fff;
+}
+.customerDetail,.customerImg{
+	float: left;
+}
+.customerDetail{
+	width: 82%;
+	padding: 0 4px;
+}
+/**/
+header .mui-icon{
+	font-size: 34px;
+	padding-top: 5px;
+}
+.mui-bar-nav ~ .mui-content .mui-pull-top-pocket{
+	top: 0;
+}
+.mui-popover .mui-table-view{
+	max-height: 400px;
+}
+/**/
+/*排序样式*/
+.filterSort{
+	width: 2rem;
+	height: 2rem;
+	position: fixed;
+	z-index: 999;
+	bottom: 20px;
+	right: 20px;
+	background: rgba(0,0,0,.6);
+	border-radius: 50%;
+	padding: 4px;
+}
+.filterSort img{
+	width: 100%;
+}
+
+/*左上角按钮样式*/
+.filterLeibie{
+	width: 60px;
+	display: inline-block;
+	position: relative;
+	font-size: 14px;
+	border: 1px solid #FF6633;
+	border-radius: 3px;
+	/*overflow: hidden;*/
+	padding: 0 3px;
+	text-align: center;
+	margin-top: 11px;
+}
+.filterLeibie .mui-icon{
+	font-size: 16px;
+	padding: 0;
+}
+.filterLeibie ul{
+	width: 60px;
+	position: absolute;
+	left: -1px;
+	top: 22px;
+	background: #fff;
+	border: 1px solid #ddd;
+	display: none;
+}
+.filterLeibie ul li{
+	padding: 5px 5px;
+	border-bottom: 1px solid #ddd;
+}

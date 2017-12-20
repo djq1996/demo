@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>写跟进</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/writeFolow.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-action-back mui-icon mui-icon-left-nav"></span>
+			<h1 class="mui-title">写跟进</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<button type="button" class="mui-btn mui-btn-block" id="save">提交保存</button>
+		</nav>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="followBox">
+						<div class="title mui-clearfix">
+							<p class="mui-text-left">客户姓名：<span>支祥</span></p>
+							<p class="mui-text-right">客户等级：<span>A</span></p>
+						</div>
+						<div class="mui-row follow-up-way">
+							<label class="mui-text-left">跟进方式：</label>
+							<button type="button" data="0" class="mui-btn  mui-btn-outlined">微信</button>
+							<button type="button" data="1" class="mui-btn  mui-btn-outlined">短信</button>
+							<button type="button" data="2" class="mui-btn  mui-btn-outlined">去电</button>
+							<button type="button" data="3" class="mui-btn  mui-btn-outlined">来电</button>
+							<button type="button" data="4" class="mui-btn  mui-btn-outlined">来访</button>
+						</div>
+						<div class="mui-input-row">
+							<textarea name="remark" rows="" cols="" placeholder="请填写跟进详情"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript">
+		$('.follow-up-way').on('tap','button',function(){
+			$(this).addClass('mui-btn-primary').siblings().removeClass('mui-btn-primary');
+			$("input[name=followType]").val($(this).attr('data'));
+		});
+		//保存
+		$("body").on('tap','#save',function(){
+			mui.toast('保存成功');
+			mui.openWindow({
+					url: '_www/html/Agent/customerDetail.html',
+					id: 'customerDetailAgent',
+					styles: {
+						popGesture:"close"
+					},	
+					show: {
+						aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+						duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					 waiting:{
+				      autoShow:true,//自动显示等待框，默认为true
+				      title:'主银，表着急...',//等待对话框上显示的提示内容
+				    }
+				})
+		});
+	</script>
+</html>

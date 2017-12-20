@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>门店周报</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/Area/weekly.css" />
+		<style type="text/css">
+			.icon {
+				    width: 1em;
+				    height: 1em;
+				    vertical-align: -0.15em;
+				    fill: currentColor;
+				    overflow: hidden;
+				  }
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">
+				门店周报
+			</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll" style="background: #fff;">
+					<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							全部
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							住宅
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							商业
+						</a>
+					</div>
+					<div class="mui-slider-group">
+						<div id="item1mobile" class="mui-control-content mui-active">
+							<div id="container" style="min-width: 310px; height: 400px; margin:30px auto 0"></div>
+
+
+						</div>
+						<div id="item2mobile" class="mui-control-content">
+							<div id="containera" style="min-width: 310px; height: 400px; margin:30px auto 0"></div>
+							
+						</div>
+						<div id="item3mobile" class="mui-control-content">
+							<div id="containerb" style="min-width: 310px; height: 400px; margin:30px auto 0"></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="../../js/highstock.js" ></script>
+	<script type="text/javascript" src="../../js/exporting.js" ></script>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		/*点击进入列表*/
+		function setOption(data){
+			var option = {
+		        chart: {
+		            type: 'column'
+		        },
+		        title: {
+		            text: ''
+		        },
+		        legend: {
+		             itemWidth: 150,
+		             align:'left',
+		             padding:10,
+		             labelFormatter: function() {
+					   /*
+					    *  格式化函数可用的变量：this， 可以用 console.log(this) 来查看包含的详细信息
+					    *  this 代表当前数据列对象，所以默认的实现是 return this.name 
+					    */
+					    var shuju = null;
+					   for(var i=0;i<this.yData.length;i++){
+					   	 shuju+= this.yData[i]
+					   }
+					    return this.name + '('+shuju+')'
+					},
+					itemMarginBottom: 10
+		        },
+		        xAxis: {
+		            categories: [
+		                '朝阳店',
+		                '国贸店',
+		                '像素店',
+		            ],
+		            crosshair: true,
+		            labels: {
+		                formatter: function () {
+		                        return '<a href="javascript:;" class="xbiaoqian">'+this.value+'</a>'
+		                }
+		            },
+		            max:1
+		        },
+		        scrollbar : {
+		            enabled:true
+		        },
+		        yAxis: {
+		            title: {
+		                text: ''
+			            }
+			    },
+			    credits: {  
+		            enabled: false     //不显示LOGO 
+		        },
+		        exporting: {
+		            buttons: {
+		                contextButton: {
+		                    enabled: false
+		                },
+		                printButton: {
+		                	align:'right',
+               				y: -10,
+//             				verticalAlign:'bottom',
+//             				x:-10,
+		                    text: '买卖',
+		                    symbolFill:"#ff6633",
+		                    onclick: function (e) {
+		                       e.srcElement.innerHTML == '租赁'?e.srcElement.innerHTML='买卖':e.srcElement.innerHTML = '租赁'
+		                    }
+		                }
+		            }
+		        },
+		        plotOptions: {
+		        	 series: {
+		                events: {
+		                    legendItemClick: function(e) {
+		                        // return false 即可禁止图例点击响应
+		                         mui.openWindow({
+									url:'_www/html/Agent/statementCustomerList.html',
+									styles: {
+										popGesture:"close"
+									},
+									show: {
+										aniShow: 'pop-in',
+										duration: '300',
+									},
+									extras:{
+										titleText:this.name
+									}
+								})
+		                        return false;
+		                    },
+		                     click: function(e) {
+		                     	console.log(e)
+		                     	mui.openWindow({
+									url:'_www/html/Agent/statementCustomerList.html',
+									styles: {
+										popGesture:"close"
+									},
+									show: {
+										aniShow: 'pop-in',
+										duration: '300',
+									},
+									extras:{
+										titleText:e.point.category+'-'+this.name
+									}
+								})
+		                        return false;
+			                } 
+		                }
+		           },
+		            column: {
+		            	dataLabels: {
+		                    enabled: true          // 开启数据标签
+		                },
+		                pointPadding: 1,
+		                pointWidth: 15
+		            }
+		        },
+		        series: data
+		    };
+			return option
+		}
+		var array = [{
+            name: '带看',
+            data: [20,24,25]
+        }, {
+            name: '新增客户',
+            data: [22, 25,27]
+        }, {
+            name: '在谈',
+            data: [23, 26,28]
+        }];
+        var arraya = [{
+            name: '带看',
+            data: [24,27,22]
+        }, {
+            name: '新增客户',
+            data: [25, 28,27]
+        }, {
+            name: '在谈',
+            data: [27, 30,28]
+        }];
+        var arrayb = [{
+            name: '带看',
+            data: [28,30,12]
+        }, {
+            name: '新增客户',
+            data: [22, 32,17]
+        }, {
+            name: '在谈',
+            data: [24, 33,20]
+        }
+        ];
+		$(function () {
+		    $('#container').highcharts(setOption(array));
+		    $('#containera').highcharts(setOption(arraya));
+		    $('#containerb').highcharts(setOption(arrayb));
+		});
+		/*点击x轴进入标签*/
+		$('body').on('tap','.xbiaoqian',function(){
+			var _txt = $(this).text()
+			mui.openWindow({
+				url:'_www/html/Agent/statementCustomerList.html',
+				styles: {
+					popGesture:"close"
+				},
+				show: {
+					aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+					duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+				},
+				extras:{
+					titleText:_txt
+				}
+			})
+		})
+	</script>
+</html>

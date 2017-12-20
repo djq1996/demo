@@ -1,0 +1,388 @@
+{
+  "index.html": {
+    "resources": [
+      "js/jquery-1.11.0.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/logo.png",
+      "css/Agent/login.css"
+    ],
+    "refer": [
+      "html/Area/nav.html",
+      "html/Agent/nav.html",
+      "html/Manager/nav.html"
+    ]
+  },
+  "html/Area/weekly.html": {
+    "resources": [
+      "css/Area/weekly.css",
+      "js/iconfont.js",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "css/mui.css",
+      "js/highstock.js",
+      "js/exporting.js"
+    ],
+    "refer": [
+      "html/Agent/statementCustomerList.html"
+    ]
+  },
+  "html/Area/shopTable.html": {
+    "resources": [
+      "js/iconfont.js",
+      "css/Area/shopTable.css",
+      "css/Agent/statements.css",
+      "js/common.js",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "fonts/mui.ttf",
+      "css/mui.css"
+    ],
+    "refer": []
+  },
+  "html/Area/nav.html": {
+    "resources": [
+      "html/Area/areaTable.html",
+      "css/iconfont.css",
+      "fonts/iconfont.ttf",
+      "css/mui.css"
+    ],
+    "refer": [
+      "html/Area/weekly.html",
+      "html/Area/areaTable.html",
+      "html/Area/shopTable.html"
+    ]
+  },
+  "html/Area/areaTable.html": {
+    "resources": [
+      "css/Area/areaTable.css",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "js/highstock.js",
+      "css/mui.css"
+    ],
+    "refer": []
+  },
+  "html/Agent/statement.html": {
+    "resources": [
+      "css/Agent/statement.css"
+    ],
+    "refer": [
+      "html/Agent/statements.html"
+    ]
+  },
+  "html/Agent/nav.html": {
+    "resources": [
+      "html/Agent/customerList.html",
+      "css/iconfont.css",
+      "fonts/iconfont.ttf",
+      "css/mui.css",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "html/Agent/statements.html"
+    ],
+    "refer": [
+      "html/Agent/statement.html",
+      "html/Agent/message.html",
+      "html/Agent/customerList.html",
+      "html/Agent/statements.html"
+    ]
+  },
+  "html/Agent/message.html": {
+    "resources": [
+      "js/common.js",
+      "img/u465.png",
+      "img/u507.png",
+      "css/Agent/message.css"
+    ],
+    "refer": []
+  },
+  "html/Agent/customerList.html": {
+    "resources": [
+      "img/soft.png",
+      "css/Agent/customerList.css",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "fonts/mui.ttf",
+      "css/mui.css"
+    ],
+    "refer": [
+      "html/Agent/takeLook.html",
+      "html/Agent/addCustomer.html",
+      "html/Agent/customerDetail.html",
+      "html/Agent/otherPush.html"
+    ]
+  },
+  "html/Manager/nav.html": {
+    "resources": [
+      "html/Manager/customerList.html",
+      "css/iconfont.css",
+      "fonts/iconfont.ttf",
+      "css/mui.css",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "html/Manager/statement.html"
+    ],
+    "refer": [
+      "html/Manager/statement.html",
+      "html/Manager/message.html",
+      "html/Manager/customerList.html"
+    ]
+  },
+  "html/Manager/statement.html": {
+    "resources": [
+      "css/Manager/statement.css",
+      "js/iconfont.js",
+      "js/common.js",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "css/mui.css"
+    ],
+    "refer": []
+  },
+  "html/Agent/statements.html": {
+    "resources": [
+      "js/iconfont.js",
+      "css/Agent/statements.css",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "fonts/mui.ttf",
+      "css/mui.css",
+      "js/common.js",
+      "css/Agent/statement.css",
+      "js/echarts.common.min.js",
+      "js/highcharts.js",
+      "js/highstock.js",
+      "js/exporting.js"
+    ],
+    "refer": [
+      "html/Agent/statement.html",
+      "html/Agent/statementCustomerList.html"
+    ]
+  },
+  "html/Manager/message.html": {
+    "resources": [
+      "js/common.js",
+      "img/u465.png",
+      "img/u507.png",
+      "css/Agent/message.css"
+    ],
+    "refer": []
+  },
+  "html/Manager/customerList.html": {
+    "resources": [
+      "img/soft.png",
+      "css/Agent/customerList.css",
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "css/mui.css"
+    ],
+    "refer": [
+      "html/Manager/takeLook.html",
+      "html/Manager/customerDetail.html",
+      "html/Manager/addCustomer.html",
+      "html/Manager/otherPush.html"
+    ]
+  },
+  "html/Manager/takeLook.html": {
+    "resources": [
+      "js/mui.picker.min.js",
+      "css/Agent/takeLook.css",
+      "css/singlePage.css",
+      "css/mui.picker.min.css",
+      "js/mui.view.js"
+    ]
+  },
+  "html/Agent/addCustomer.html": {
+    "resources": [
+      "css/Agent/addCustomer.css",
+      "css/singlePage.css",
+      "js/mui.view.js"
+    ],
+    "refer": [
+      "html/Agent/houseMatching.html"
+    ]
+  },
+  "html/Agent/customerDetail.html": {
+    "resources": [
+      "fonts/mui-icons-extra.ttf",
+      "css/Agent/customersDetail.css",
+      "css/icons-extra.css",
+      "js/common.js",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "fonts/mui.ttf",
+      "css/mui.css"
+    ],
+    "refer": [
+      "html/Agent/setRemind.html",
+      "html/Agent/lookBack.html",
+      "html/Agent/homeDetail.html",
+      "html/Agent/takeLook.html",
+      "html/Agent/customerPush.html"
+    ]
+  },
+  "html/Agent/setRemind.html": {
+    "resources": [
+      "js/mui.picker.min.js",
+      "css/mui.picker.min.css",
+      "css/Agent/setRemind.css",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "fonts/mui.ttf",
+      "css/mui.css"
+    ]
+  },
+  "html/Agent/lookBack.html": {
+    "resources": [
+      "js/mui.picker.min.js",
+      "css/mui.picker.min.css",
+      "css/Agent/setRemind.css"
+    ]
+  },
+  "html/Agent/otherPush.html": {
+    "resources": [
+      "css/Agent/otherPush.css"
+    ],
+    "refer": [
+      "html/Agent/pushDetail.html"
+    ]
+  },
+  "html/Agent/pushDetail.html": {
+    "resources": [
+      "css/Agent/pushDetail.css",
+      "js/mui.js",
+      "js/common.js",
+      "js/jquery-1.11.0.js",
+      "fonts/mui.ttf",
+      "css/mui.css"
+    ],
+    "refer": [
+      "html/Agent/houseMatching.html"
+    ]
+  },
+  "html/Agent/houseMatching.html": {
+    "resources": [
+      "img/home.jpg",
+      "img/home3.jpg",
+      "img/home2.jpg",
+      "css/Agent/houseMatching.css"
+    ]
+  },
+  "html/Manager/otherPush.html": {
+    "refer": [
+      "html/Manager/pushDetail.html"
+    ]
+  },
+  "html/Manager/addCustomer.html": {
+    "resources": [
+      "css/Agent/addCustomer.css",
+      "js/common.js",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "css/singlePage.css",
+      "fonts/mui.ttf",
+      "css/mui.css",
+      "js/mui.view.js"
+    ],
+    "refer": [
+      "html/Agent/houseMatching.html"
+    ]
+  },
+  "html/Manager/customerDetail.html": {
+    "resources": [
+      "fonts/mui-icons-extra.ttf",
+      "css/Agent/customersDetail.css",
+      "css/icons-extra.css",
+      "js/common.js",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "fonts/mui.ttf",
+      "css/mui.css"
+    ],
+    "refer": [
+      "html/Manager/updateIntention.html",
+      "html/Manager/homeDetail.html",
+      "html/Manager/customerPush.html"
+    ]
+  },
+  "html/Manager/updateIntention.html": {
+    "resources": [
+      "css/Agent/updateIntention.css",
+      "js/common.js",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "css/singlePage.css",
+      "fonts/mui.ttf",
+      "css/mui.css",
+      "js/mui.view.js"
+    ],
+    "refer": [
+      "html/Agent/houseMatching.html"
+    ]
+  },
+  "html/Manager/homeDetail.html": {
+    "resources": [
+      "img/home.jpg",
+      "img/homeDetail.png",
+      "css/Agent/hosing-detail.css",
+      "img/home3.jpg",
+      "img/home2.jpg",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "fonts/mui.ttf",
+      "css/mui.css",
+      "css/icons-extra.css"
+    ]
+  },
+  "html/Agent/homeDetail.html": {
+    "resources": [
+      "img/home.jpg",
+      "img/homeDetail.png",
+      "css/Agent/hosing-detail.css",
+      "img/home3.jpg",
+      "img/home2.jpg",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "fonts/mui.ttf",
+      "css/mui.css",
+      "css/icons-extra.css"
+    ]
+  },
+  "html/Agent/statementCustomerList.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "img/soft.png",
+      "css/Agent/customerList.css"
+    ]
+  },
+  "html/Agent/takeLook.html": {
+    "resources": [
+      "js/mui.picker.min.js",
+      "css/Agent/takeLook.css",
+      "css/singlePage.css",
+      "css/mui.picker.min.css",
+      "js/mui.view.js",
+      "js/mui.min.js",
+      "js/jquery-1.11.0.js",
+      "fonts/mui.ttf",
+      "css/mui.css"
+    ]
+  },
+  "html/Agent/customerPush.html": {
+    "resources": [
+      "img/tagactive.png",
+      "css/Agent/customerPush.css",
+      "img/tag.png"
+    ]
+  },
+  "html/Manager/customerPush.html": {
+    "resources": [
+      "img/tagactive.png",
+      "css/Agent/customerPush.css",
+      "img/tag.png"
+    ]
+  }
+}

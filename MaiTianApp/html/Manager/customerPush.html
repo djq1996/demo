@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>客户推送</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.css">
+		<link rel="stylesheet" type="text/css" href="../../css/icons-extra.css" />
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/customerPush.css" />
+		<style>
+			.mui-content {
+				/*position: relative;*/
+				/*height: 100vh;*/
+			}
+			
+			.pushBox {
+				/*position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: 999;*/
+				width: 100%;
+				padding: 4px;
+			}
+			
+			.pushBox textarea {
+				font-size: 14px;
+				margin-bottom: 0;
+				/*width: 86%;*/
+			}
+			/*.pushBox button{
+				display: block;
+				margin: 0 auto;
+				padding: 4px 10px;
+				width: 26%;
+			}*/
+			
+			.mui-bar .mui-btn-block {
+				color: #fff;
+				background: #f56140;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-badge-light-blue">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">
+				客户推送
+			</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<button type="button" id="pushSure" class="mui-btn mui-btn-block" id="save">推送</button>
+		</nav>
+		<div class="mui-content">
+
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div id="item1" class="mui-control-content mui-row mui-active">
+						<div class="menu mui-col-xs-2">
+							<a class="mui-tag  mui-tag-active" href="#fx">公司</a>
+						</div>
+						<div class="mui-col-xs-10" style="width: 86%;">
+							<!--枫行集团-->
+							<div class="page-tab page-tab-active" id="fx">
+
+								<h6>公司</h6>
+								<ul class="mui-table-view">
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											京东南大区
+										</a>
+										<a class="mui-col-xs-2 unfold" href="#zn">
+											展开
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											京东北大区
+										</a>
+										<a class="mui-col-xs-2 unfold" href="#xs">
+											展开
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											京西大区
+										</a>
+										<a class="mui-col-xs-2 unfold" href="#sc">
+											展开
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!--职能-->
+							<div class="page-tab" id="zn">
+								<h6>片区</h6>
+								<ul class="mui-table-view">
+									
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											朝青东区
+										</a>
+										<a class="mui-col-xs-2 unfold" href="#cy">
+											展开
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											CBD东区
+										</a>
+										<a class="mui-col-xs-2 unfold" href="#HD">
+											展开
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											大悦城区
+										</a>
+										<a class="mui-col-xs-2 unfold" href="#dx">
+											展开
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											国美区
+										</a>
+										<a class="mui-col-xs-2 unfold" href="#dx">
+											展开
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											酒仙桥区
+										</a>
+										<a class="mui-col-xs-2 unfold" href="#dx">
+											展开
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											丽都区
+										</a>
+										<a class="mui-col-xs-2 unfold" href="#dx">
+											展开
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											青年汇区
+										</a>
+										<a class="mui-col-xs-2 unfold" href="#dx">
+											展开
+										</a>
+									</li>
+								</ul>
+
+							</div>
+							<div class="page-tab" id="cy">
+								<h6>门店</h6>
+								<ul class="mui-table-view">
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											朝青中心店A组
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											朝青中心店B组
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											朝青中心店C组
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											朝青中心店D组
+										</a>
+									</li>
+									<li class="mui-row">
+										<a class="mui-col-xs-10 pushText">
+											朝青中心店E组
+										</a>
+									</li>
+								</ul>
+
+							</div>
+
+						</div>
+					</div>
+					<div class="mui-row">
+						<div class="mui-col-xs-2" style="width: 13%;"></div>
+						<div class="mui-col-xs-10" style="width: 86%;">
+							<div class="pushBox">
+								<textarea type="text" placeholder="请输入推送备注"></textarea>
+
+								<!--<button type="button" id="" class="mui-btn mui-btn-yellow">完成</button>-->
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<script src="../../js/jquery-1.11.0.js"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/common.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true, //启用右滑关闭功能
+				//				statusBarBackground: '#f7f7f7'
+			});
+
+			//初始化单页的区域滚动
+			mui('.mui-scroll-wrapper').scroll();
+			/*部门之间的选项卡*/
+			var zIndex = 100;
+			$("body").on("tap", '.unfold', function() {
+				$(".menu a").removeClass('mui-tag-active')
+				var _href = $(this).attr('href')
+				var html = '<a class="mui-tag mui-tag-active" href="' + _href + '">' + $(this).siblings('a').text() + '</a>';
+				$(".page-tab").hide();
+				$(_href).show();
+				/*tag标签层级高低*/
+				$(".menu a").each(function() {
+					$(this).css("z-index", zIndex--)
+				})
+				$(".menu").append(html);
+			});
+			/*点击标签切换*/
+			$("body").on("tap", '.mui-tag', function() {
+				var _href = $(this).attr('href');
+				$(".page-tab").hide();
+				$(_href).show();
+				$(this).addClass("mui-tag-active").siblings().removeClass('mui-tag-active');
+				$(this).nextAll().remove();
+			})
+
+			/*推送*/
+			$(".pushBox,#pushSure").hide()
+			$(".pushText").on("tap", function() {
+				$(".pushBox").show().find("textarea").focus();
+				$("#pushSure").show();
+			});
+			$(".unfold").on("tap", function() {
+				$(".pushBox").hide();
+				$("#pushSure").hide();
+			});
+			$("#pushSure").click(function() {
+				$(".pushBox").hide()
+				setTimeout(function() {
+					mui.confirm('是否推送？', ' ', function(e) {
+						if(e.index == 1) {
+							mui.toast('推送成功')
+						}
+
+					}, 'div')
+				}, 1000)
+			})
+		</script>
+	</body>
+
+</html>

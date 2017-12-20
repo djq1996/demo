@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>提醒人员列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/remindList.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-action-back mui-icon mui-icon-left-nav"></span>
+			<h1 class="mui-title">提醒人员列表</h1>
+		</header>
+		<div class="mui-content">
+			<div class="searchBox">
+				<div class="mui-row">
+					<div class="mui-col-xs-10">
+						<input type="text" placeholder="请输入人员名称" />
+					</div>
+					<div class="mui-col-xs-2">
+						<button type="button" class="mui-btn">搜索</button>
+					</div>
+				</div>
+			</div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view">
+					    <li class="mui-table-view-cell back">萧敬腾</li>
+					    <li class="mui-table-view-cell back">金鑫荣</li>
+					    <li class="mui-table-view-cell back">薇娅</li>
+					    <li class="mui-table-view-cell back">李大川</li>
+					    <li class="mui-table-view-cell back">小军</li>
+					    <li class="mui-table-view-cell back">施枫话</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript">
+		mui('.mui-scroll-wrapper').scroll({
+			deceleration: 0.0006
+		});
+		mui.plusReady(function(){
+			mui("body").on("tap",".back",function(){   
+		        var view=plus.webview.currentWebview().opener();
+		        mui.fire(view,'doit',{   
+		            inputVal:$(this).text()   
+		        });   
+		        mui.back()   
+		    }) 
+		})  
+	</script>
+</html>

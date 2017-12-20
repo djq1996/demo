@@ -1,0 +1,144 @@
+span.mui-pull-right i{
+	color: #000;
+	font-style: normal;
+}
+h4.title {
+    height: 30px;
+    /*background: rgba(221, 221, 221, 0.51);*/
+    margin: 0;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 30px;
+    padding: 0 .4rem;
+    color: #000;
+}
+.searchBox{
+	padding: 10px;
+}
+.searchBox .mui-col-xs-10 input{
+	margin: 0;
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+.searchBox .mui-col-xs-2 button{
+	background: #f56140;
+    color: #fff;
+    float: right;
+    border: 0;
+    height: 30px;
+}
+.addCusBox{
+	background: #fff;
+}
+.addCusBox .mui-input-row{
+	border-bottom: 1px solid #eaeaea;
+}
+.mui-input-row label{
+    padding: .65rem .75rem;
+    color: #000;
+    font-size: 14px;
+    width: 44%;
+}
+.delphonegroup  label{
+	padding: .65rem 0;
+}
+.mui-input-row label ~ input{
+	font-size: 14px;
+	width: 56%;
+	color: #999;
+}
+.mui-input-row .add-phone{
+	padding: .7rem;
+    display: inline-block;
+    font-size: 14px;
+    color: #007aff;
+}
+.mui-input-row .mui-switch{
+	margin-right: 13px;
+}
+.phonebox .delphonegroup {
+    position: relative;
+    border-top: 1px solid #eaeaea;
+}
+.nameGroup,.phoneGroup,.relationGroup{
+	padding-left: 2rem;
+}
+.nameGroup,.phoneGroup{
+	 
+	border-bottom: 1px solid #eaeaea;
+}
+.phonebox .delphonegroup .mui-icon {
+    position: absolute;
+    left: .5rem;
+    top: 9px;
+    color: red;
+}
+.mui-title{
+	color: #f56140;
+}
+i.must{
+	color: red;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+#default .mui-table-view-cell > a:not(.mui-btn).mui-active{
+	background-color: transparent;
+}
+#default .mui-table-view-cell.mui-active{
+	background-color: transparent;
+}
+.addContact{
+	color: #007aff;
+	font-size: 14px;
+}
+.ContactBox .mui-table-view:before{
+	background-color: transparent;
+}
+.ContactBox .mui-table-view:after{
+	background: transparent;
+}
+.sex span{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+.mui-switch:before{
+	font-size: 13px;
+    position: absolute;
+    top: 3px;
+    right: 11px;
+    content: '男';
+    text-transform: uppercase;
+    color: #999;
+}
+.mui-switch.mui-active:before {
+    right: auto;
+    left: 15px;
+    content: '女';
+    color: #fff;
+}
+.mui-table-view-cell .mui-col-xs-5 span{
+	font-size: 14px;
+	line-height: 30px;
+}
+.mui-table-view-cell .mui-col-xs-7 input{
+	font-size: 14px;
+	line-height: 30px;
+}
+
+#needType .mui-table-view-cell,#use .mui-table-view-cell,#habitable .mui-table-view-cell,#mating .mui-table-view-cell
+,#section .mui-table-view-cell,#intention .mui-table-view-cell{
+	font-size: 14px;
+}
+.mui-bar .mui-btn-block{
+	color:#fff;
+	background: #f56140;
+}
+.mui-bar-tab{
+	-webkit-box-shadow: 1px -1px 1px #ccc;
+	box-shadow: 1px -1px 1px #ccc;
+}
+

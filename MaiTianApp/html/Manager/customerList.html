@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>店长客源列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/customerList.css"/>
+		<style>
+			.bgs{
+			    position: fixed;
+			    z-index: 14;
+			    width: 100%;
+			    height: 100%;
+			    background: rgba(0,0,0,.4);
+			    top: 0;
+			    display: none;
+			}
+			.bgs .content {
+			    margin: 3rem 1rem;
+			    background: #fff;
+			    border-radius: .3rem;
+			    padding: .3rem;
+			}
+			.bgs .content textarea{
+				border-color: #ddd;
+				margin-bottom: 0;
+				height: 250px;
+				font-size: .65rem;
+			}
+			.bgs .content button{
+				display: block;
+				margin: 0 auto;
+				border: none;
+				color: #fff;
+				width: 100px;
+				background: #ff6633;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-badge-light-blue">
+			<div class="filterLeibie">
+				<a  href="#filterLeibie"><span>住宅</span><i class="mui-icon mui-icon-arrowdown"></i></a>
+			</div>
+			<h1 class="mui-title ">
+				<div class="rent-purchase">
+					<a class="transfer active">求购</a>
+	      			<a class="lease">求租</a>
+				</div>
+		    </h1>
+			<a class="mui-icon mui-icon-plusempty mui-pull-right toAddCus" id="AddCus"></a>
+		</header>
+		
+		<div class="mui-content">
+			<div class="bg"></div>
+			<div class="filterSort">
+				<a href="#soft"><img src="../../img/soft.png"/></a>
+			</div>
+			<!--排序弹框-->
+			<div id="soft" class="mui-popover mui-popover-action mui-popover-bottom">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#soft">默认排序</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#soft">距上次带看天数（从高到低）</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#soft">距上次带看天数（从低到高）</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#soft">未跟进天数（从高到低）</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#soft">未跟进天数（从低到高）</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#soft">累计带看量（从高到低）</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#soft">累计带看量（从低到高）</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#soft">累计看房量（从高到低）</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#soft">累计看房量（从低到高）</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#soft"><b>取消</b></a>
+					</li>
+				</ul>
+			</div>
+			<!--类型弹框-->
+			<div id="filterLeibie" class="mui-popover mui-popover-action mui-popover-bottom">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#filterLeibie">全部</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#filterLeibie">住宅</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="#filterLeibie">商业</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#filterLeibie"><b>取消</b></a>
+					</li>
+				</ul>
+			</div>
+			<!--电话弹框-->
+			<div id="phone" class="mui-popover mui-popover-action mui-popover-bottom">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="tel:18513552894">185****2894</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="tel:18513552894">155****6893</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#phone"><b>取消</b></a>
+					</li>
+				</ul>
+			</div>
+			<!--电话弹框2-->
+			<div id="phones" class="mui-popover mui-popover-action mui-popover-bottom">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="tel:18513552894">132****2894</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="tel:13263385258">138****5258</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="tel:13263385258">138****5258</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#phones"><b>取消</b></a>
+					</li>
+				</ul>
+			</div>
+			<!--结束-->
+			<div class="customerSerach">
+				<input type="search" name="" id="" value="" placeholder="请输入您要搜索的客户名称"/>
+			</div>
+			<div class="cutomerFilter">
+				<ul>
+					<li><a href="javascript:;" class=""><span class="filterText">我的客户</span><i class="mui-icon mui-icon-arrowdown"></i></a>
+						<div class="cutomerFilterName" style="display: none;">
+							<ol>
+								<li class="active">我的客户</li>
+								<li id="otherPush">他人推送</li>
+								<li>总待买客户</li>
+								<li>有效客户</li>
+								<li>超期未带看</li>
+								<li>在谈客户</li>
+							</ol>
+						</div>
+					</li>
+					<li><a href="javascript:;"><span class="filterText">居室</span><i class="mui-icon mui-icon-arrowdown"></i></a>
+						<div class="cutomerFilterName">
+							<ol>
+								<li>不限</li>
+								<li>一室</li>
+								<li>二室</li>
+								<li>三室</li>
+								<li>四室</li>
+								<li>五室及以上</li>
+							</ol>
+						</div>
+					</li>
+					<li><a href="javascript:;"><span class="filterText">价格</span><i class="mui-icon mui-icon-arrowdown"></i></a>
+						<div class="cutomerFilterName">
+							<ol>
+								<li>不限</li>
+								<li>200万以下</li>
+								<li>200-300万</li>
+								<li>300-400万</li>
+								<li>600-800万</li>
+								<li>800万以上</li>
+							</ol>
+							<div class="moneyZ">
+								自定义价格<input type="text" class="" placeholder="最低价（万）" />至<input type="text" placeholder="最高价（万）" />
+								<button type="button" class="mui-btn mui-btn-blue">确定</button>
+							</div>
+						</div>
+					</li>
+					<li><a href="javascript:;"><span class="filterText">等级</span><i class="mui-icon mui-icon-arrowdown"></i></a>
+						<div class="cutomerFilterName">
+							<ol>
+								<li>A级</li>
+								<li>B级</li>
+								<li>C级</li>
+								<li>在谈</li>
+								<li>已成交</li>
+							</ol>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-scroll-wrapper"	style="top: 6rem;">
+				<div class="mui-scroll">
+					<ul class="mui-table-view" id="customerList">
+						<li class="mui-row" >
+							<div class="mui-btn-warning customerImg">
+								<p>董</p>
+							</div>
+							<div class="customerDetail mui-row">
+								<div class="mui-col-xs-9" id="customerDetail">
+									<div class="mui-row">
+										<p class="mui-col-xs-4"><b>董永</b></p>
+										<!--<p class="mui-col-xs-4"><b>185****2894</b></p>-->
+										<p class="mui-col-xs-2"><b>A级</b></p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">意向：住宅 </p>
+										<p class="mui-col-xs-8">1室1厅 100万-120万</p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">累计带看<b>3</b></p>
+										<p class="mui-col-xs-4">累计看房<b>10</b></p>
+									</div>
+								</div>
+								<div class="mui-col-xs-3 mui-row">
+									<p class="mui-text-right"><b>1</b>天未跟进</p>
+									<p class="mui-text-right"><a href="#phones" class="mui-icon mui-icon-phone phone" style="color: #FF6633;"></a><a href="#" class="mui-icon mui-icon-compose says"></a></p>
+									<p class="mui-text-right"><b>2</b>天未带看</p>
+								</div>
+							</div>
+						</li>
+						<li class="mui-row">
+							<div class="mui-btn-danger customerImg">
+								<p>张</p>
+							</div>
+							<div class="customerDetail mui-row">
+								<div class="mui-col-xs-9" id="customerDetail">
+									<div class="mui-row">
+										<p class="mui-col-xs-4"><b>张晋</b></p>
+										<!--<p class="mui-col-xs-4"><b>185****2894</b></p>-->
+										<p class="mui-col-xs-2"><b>C级</b></p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">意向：住宅 </p>
+										<p class="mui-col-xs-8">1室1厅 300万-420万</p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">累计带看<b>3</b></p>
+										<p class="mui-col-xs-4">累计看房<b>10</b></p>
+									</div>
+								</div>
+								<div class="mui-col-xs-3 mui-row">
+									<p class="mui-text-right"><b>2</b>天未跟进</p>
+									<p class="mui-text-right"><a href="#phones" class="mui-icon mui-icon-phone phone" style="color: #FF6633;"></a><a href="#" class="mui-icon mui-icon-compose says"></a></p>
+									<p class="mui-text-right"><b>3</b>天未带看</p>
+								</div>
+							</div>
+						</li>
+						<li class="mui-row">
+							<div class="mui-btn-warning customerImg">
+								<p>王</p>
+							</div>
+							<div class="customerDetail mui-row">
+								<div class="mui-col-xs-9" id="customerDetail">
+									<div class="mui-row">
+										<p class="mui-col-xs-4"><b>王大山</b></p>
+										<!--<p class="mui-col-xs-4"><b>185****2894</b></p>-->
+										<p class="mui-col-xs-2"><b>B级</b></p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">意向：住宅 </p>
+										<p class="mui-col-xs-8">1室1厅 100万-220万</p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">累计带看<b>3</b></p>
+										<p class="mui-col-xs-4">累计看房<b>10</b></p>
+									</div>
+								</div>
+								<div class="mui-col-xs-3 mui-row">
+									<p class="mui-text-right"><b>1</b>天未跟进</p>
+									<p class="mui-text-right"><a href="#phones" class="mui-icon mui-icon-phone phone" style="color: #FF6633;"></a><a href="#" class="mui-icon mui-icon-compose says"></a></p>
+									<p class="mui-text-right"><b>2</b>天未带看</p>
+								</div>
+							</div>
+						</li>
+						<li class="mui-row">
+							<div class="mui-btn-primary customerImg">
+								<p>韩</p>
+							</div>
+							<div class="customerDetail mui-row">
+								<div class="mui-col-xs-9" id="customerDetail">
+									<div class="mui-row">
+										<p class="mui-col-xs-4"><b>韩江</b></p>
+										<!--<p class="mui-col-xs-4"><b>185****2894</b></p>-->
+										<p class="mui-col-xs-2"><b>A级</b></p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">意向：住宅 </p>
+										<p class="mui-col-xs-8">1室1厅 200万-220万</p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">累计带看<b>3</b></p>
+										<p class="mui-col-xs-4">累计看房<b>2</b></p>
+									</div>
+								</div>
+								<div class="mui-col-xs-3 mui-row">
+									<p class="mui-text-right"><b>3</b>天未跟进</p>
+									<p class="mui-text-right"><a href="#phones" class="mui-icon mui-icon-phone phone" style="color: #FF6633;"></a><a href="#" class="mui-icon mui-icon-compose says"></a></p>
+									<p class="mui-text-right"><b>5</b>天未带看</p>
+								</div>
+							</div>
+						</li>
+						<li class="mui-row">
+							<div class="mui-btn-primary customerImg">
+								<p>成</p>
+							</div>
+							<div class="customerDetail mui-row">
+								<div class="mui-col-xs-9" id="customerDetail">
+									<div class="mui-row">
+										<p class="mui-col-xs-4"><b>成伟</b></p>
+										<!--<p class="mui-col-xs-4"><b>185****2894</b></p>-->
+										<p class="mui-col-xs-2"><b>B级</b></p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">意向：住宅 </p>
+										<p class="mui-col-xs-8">1室1厅 200万-220万</p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">累计带看<b>34</b></p>
+										<p class="mui-col-xs-4">累计看房<b>33</b></p>
+									</div>
+								</div>
+								<div class="mui-col-xs-3 mui-row">
+									<p class="mui-text-right"><b>1</b>天未跟进</p>
+									<p class="mui-text-right"><a href="#phones" class="mui-icon mui-icon-phone phone" style="color: #FF6633;"></a><a href="#" class="mui-icon mui-icon-compose says"></a></p>
+									<p class="mui-text-right"><b>2</b>天未带看</p>
+								</div>
+							</div>
+						</li>
+						<li class="mui-row" >
+							<div class="mui-btn-danger customerImg">
+								<p>上官</p>
+							</div>
+							<div class="customerDetail mui-row">
+								<div class="mui-col-xs-9" id="customerDetail">
+									<div class="mui-row">
+										<p class="mui-col-xs-4"><b>上官莹莹</b></p>
+										<!--<p class="mui-col-xs-4"><b>185****2894</b></p>-->
+										<p class="mui-col-xs-2"><b>B级</b></p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">意向：住宅 </p>
+										<p class="mui-col-xs-8">1室1厅 200万-220万</p>
+									</div>
+									<div class="mui-row">
+										<p class="mui-col-xs-4">累计带看<b>3</b></p>
+										<p class="mui-col-xs-4">累计看房<b>10</b></p>
+									</div>
+								</div>
+								<div class="mui-col-xs-3 mui-row">
+									<p class="mui-text-right"><b>1</b>天未跟进</p>
+									<p class="mui-text-right"><a href="#phones" class="mui-icon mui-icon-phone phone" style="color: #FF6633;"></a><a href="#" class="mui-icon mui-icon-compose says"></a></p>
+									<p class="mui-text-right"><b>2</b>天未带看</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--填写框-->
+		<div class="bgs">
+			<div class="content">
+			<form action="" method="post">
+				<textarea name="" rows="" cols="" maxlength="200" placeholder="最大字符200"></textarea>
+				<button type="button" class="mui-btn  mui-badge-light-blue w100">完成</button>
+			</form>
+			</div>
+		</div>
+		<script src="../../js/jquery-1.11.0.js"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script>
+			mui.init();
+			/*头部选项卡*/
+			$(".rent-purchase a").on('tap',function(){
+				$(this).addClass('active').siblings().removeClass('active')
+			})
+			/*筛选条件*/
+			$(".cutomerFilter > ul > li").on('tap',function(){
+				$('.bg').hide()
+				$('.cutomerFilterName').slideUp();
+				$('.cutomerFilter a').removeClass('active')
+				if($(this).find('.cutomerFilterName').css('display')=='none'){
+					$(this).find('a').addClass('active');
+					$(this).find('.cutomerFilterName').slideDown();
+					$('.bg').show()
+				}
+//				return false
+//				$('.cutomerFilterName').eq($(this).index()).slideToggle();
+			});
+			$('.moneyZ').on('tap',function(){
+				return false
+			});
+			$('.moneyZ button').on('tap',function(){
+				$('.cutomerFilterName').slideUp();
+				$('.bg').hide()
+			})
+			$(".cutomerFilterName > ol > li").on('tap',function(){
+				$(this).addClass('active').siblings().removeClass('active')
+				var secondtext = $(this).text();
+				if(secondtext.length > 4) {
+					secondtext = secondtext.substr(0, 3) + '...';
+				}
+				$(this).parents('li').find('.filterText').text(secondtext)
+//				filterText
+//				return false
+			});
+			$('.bg').on('tap',function(){
+				$(this).hide()
+				$('.cutomerFilterName').slideUp();
+			});
+			//上拉，下拉
+			mui('.mui-scroll-wrapper').pullRefresh({
+			down: {
+				callback: function() {
+					setTimeout(function() {
+//						window.location.reload()
+//						$("#customerList").empty();
+//						loadList($("#customerListData").serialize(), type)
+						mui('.mui-scroll-wrapper').pullRefresh().endPulldownToRefresh();
+						mui.toast("刷新成功");
+					}, 1500);
+				}
+			},
+			up: {
+				contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+				contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+				callback: function() {
+					setTimeout(function() {
+						mui('.mui-scroll-wrapper').pullRefresh().endPullupToRefresh();
+						mui.toast("加载成功");
+						
+					}, 1500);
+				}
+			}
+		});
+		
+		$("#filterLeibie a").on('tap',function(){
+			if($(this).text() !='取消'){
+			$('.filterLeibie').find('span').text($(this).text());
+			}
+		});
+		/*弹出写跟进事件*/
+			$('.says').on('tap',function(){
+				$(".bgs").show();
+//				$(".bgs textarea").focus();
+			});
+			$(".bgs .content").on('tap',function(e){
+				return false;
+			});
+			$(".bgs").on('tap',function(e){
+				$(".bgs").hide();
+				$(".bgs textarea").blur();
+			});
+			$(".bgs button").on('tap',function(e){
+				$(".bgs").hide();
+				$(".bgs textarea").blur();
+			});
+		/*打电话*/
+		mui('body').on('tap', '.customerDetail .phone', function(e) {
+			var id = $(this).attr("href")
+//			e.stopPropagation();]
+//			return false
+			
+		});
+		function OpenNewPage(ele,id,pageurl) {
+			mui('body').on('tap',ele, function() {
+				mui.openWindow({
+					url: pageurl,
+					id: id,
+					styles: {
+						popGesture:"close"
+					},	
+					show: {
+						aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+						duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					 waiting:{
+				      autoShow:true,//自动显示等待框，默认为true
+				      title:'主银，表着急...',//等待对话框上显示的提示内容
+				    }
+				})
+			})
+		}
+		OpenNewPage("#AddCus",'addCustomer','addCustomer.html');
+		OpenNewPage("#customerDetail",'customerDetail','customerDetail.html');
+		OpenNewPage('#otherPush','otherPush','otherPush.html')
+		</script>
+	</body>
+</html>

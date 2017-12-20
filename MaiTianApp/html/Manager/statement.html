@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>资源量化表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/Manager/statement.css"/>
+		<style type="text/css">
+			.icon {
+			    width: 1em;
+			    height: 1em;
+			    vertical-align: -0.04em;
+			    fill: currentColor;
+			    overflow: hidden;
+			    }
+			    .mui-scroll-wrapper {
+				    top: 44px;
+				    background: #fff;
+				}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">资源量化表</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div id="container" style="min-width: 310px; height: 400px; margin:30px auto 0"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script src="../../js/highcharts.js"></script>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/common.js"></script>
+	<script type="text/javascript">
+		mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		/*点击进入列表*/
+		
+		$(function () {
+		    $('#container').highcharts({
+		        chart: {
+		            type: 'column'
+		        },
+		        title: {
+		            text: ''
+		        },
+		        legend: {
+		             itemWidth: 200,
+		             align:'left',
+		              padding:30,
+		             labelFormatter: function() {
+					   /*
+					    *  格式化函数可用的变量：this， 可以用 console.log(this) 来查看包含的详细信息
+					    *  this 代表当前数据列对象，所以默认的实现是 return this.name 
+					    */
+					    var shuju = null;
+					   for(var i=0;i<this.yData.length;i++){
+					   	 shuju+= this.yData[i]
+					   }
+					    return this.name + '('+shuju+')'
+					},
+					itemMarginBottom: 20
+		        },
+		        xAxis: {
+		            categories: [
+		                '总待买',
+		                '有效',
+		                '超期未带看',
+		                '复看'
+		            ],
+		            crosshair: true,
+		            labels: {
+		                formatter: function () {
+		                        return '<a href="javascript:;" class="xbiaoqian">'+this.value+'</a>'
+		                }
+		            }
+		        },
+		        yAxis: {
+		            title: {
+		                text: ''
+			            }
+			    },
+			    scrollbar : {
+		            enabled:true
+		        },
+			    credits: {  
+		            enabled: false     //不显示LOGO 
+		       },
+		        plotOptions: {
+		        	 series: {
+		                events: {
+		                    legendItemClick: function(e) {
+		                        // return false 即可禁止图例点击响应
+		                        console.log()
+		                        mui.openWindow({
+									url:'_www/html/Manager/statementCustomerList.html',
+									styles: {
+										popGesture:"close"
+									},
+									show: {
+										aniShow: 'pop-in',
+										duration: '300',
+									},
+									extras:{
+										titleText:this.name
+									}
+								})
+		                        return false;
+		                    },
+		                     click: function(e) {
+		                     	console.log(e)
+			                    mui.openWindow({
+									url:'_www/html/Manager/statementCustomerList.html',
+									styles: {
+										popGesture:"close"
+									},
+									show: {
+										aniShow: 'pop-in',
+										duration: '300',
+									},
+									extras:{
+										titleText:e.point.category+'-'+this.name
+									}
+								})
+		                        return false;
+			                } 
+		                }
+		           },
+		            column: {
+		            	dataLabels: {
+		                    enabled: true          // 开启数据标签
+		                },
+		                pointPadding: 0.2,
+		                borderWidth: 0
+		            }
+		        },
+		        series: [{
+		            name: '租赁',
+		            data: [20,10,12,19]
+		        }, {
+		            name: '买卖',
+		            data: [22, 15,17,29]
+		        }]
+		    });
+		});
+		/*点击x轴进入标签*/
+		$('body').on('tap','.xbiaoqian',function(){
+			var _txt = $(this).text()
+			mui.openWindow({
+				url:'_www/html/Manager/statementCustomerList.html',
+				styles: {
+					popGesture:"close"
+				},
+				show: {
+					aniShow: 'pop-in', //页面显示动画，默认为”slide-in-right“；
+					duration: '300', //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+				},
+				extras:{
+					titleText:_txt
+				}
+			})
+		})
+	</script>
+
+</html>

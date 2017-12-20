@@ -1,0 +1,119 @@
+span.mui-pull-right i{
+	color: #000;
+	font-style: normal;
+}
+h4.title {
+    height: 30px;
+    /*background: rgba(221, 221, 221, 0.51);*/
+    margin: 0;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 30px;
+    padding: 0 .4rem;
+    color: #000;
+    background: #efeff4;
+}
+.searchBox{
+	padding: 10px;
+}
+.searchBox .mui-col-xs-10 input{
+	margin: 0;
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+.searchBox .mui-col-xs-2 button{
+	background: #f56140;
+    color: #fff;
+    float: right;
+    border: 0;
+    height: 30px;
+}
+#default .updateCusBox h1,#default .perfectBox h1{
+	font-size: 14px;
+	font-weight: normal;
+	background: #efeff4;
+	margin: 0;
+	padding: 5px;
+}
+#default .updateCusBox,#default .perfectBox{
+	background: #fff;
+}
+#default .updateCusBox .mui-input-row,#default .perfectBox .mui-input-row{
+	border-bottom:1px solid #eaeaea ;
+}
+#default .updateCusBox .mui-input-row label,#default .perfectBox .mui-input-row label{
+    padding: .65rem .75rem;
+    color: #000;
+    font-size: 14px;
+    width: 40%;
+}
+#default .updateCusBox .mui-input-row label ~ input,#default .perfectBox .mui-input-row label ~ input{
+	font-size: 14px;
+    width: 60%;
+    color: #999;
+}
+#default .updateCusBox .mui-input-row .add-phone{
+    padding: .7rem;
+    display: inline-block;
+    font-size: 14px;
+    color: #007aff;
+}
+.phonebox .delphonegroup .mui-icon{
+	position: absolute;
+    left: .5rem;
+    top: 9px;
+    color: red;
+}
+.phonebox .delphonegroup{
+	position: relative;
+    border-top: 1px solid #eaeaea;
+}
+.nameGroup, .phoneGroup{
+	border-bottom: 1px solid #eaeaea;
+}
+.nameGroup, .phoneGroup, .relationGroup{
+	padding-left: 2rem;
+}
+#default .updateCusBox .mui-input-row .delphonegroup  label{
+    padding: .65rem 0;
+}
+#customerType .mui-table-view-cell,#use .mui-table-view-cell,#habitable .mui-table-view-cell,#mating .mui-table-view-cell
+,#section .mui-table-view-cell,#intention .mui-table-view-cell,#customerSource .mui-table-view-cell{
+	font-size: 14px;
+}
+#intention .mui-table-view-cell .mui-badge i{
+	font-style: initial;
+}
+.mui-bar-tab{
+	box-shadow: 1px -1px 1px #ccc;
+}
+.mui-bar .mui-btn-block{
+	color: #fff;
+    background: #f56140;
+}
+.mui-switch:before{
+	font-size: 13px;
+    position: absolute;
+    top: 3px;
+    right: 11px;
+    content: '男';
+    text-transform: uppercase;
+    color: #999;
+}
+.mui-switch.mui-active:before {
+    right: auto;
+    left: 15px;
+    content: '女';
+    color: #fff;
+}
+.mui-input-row .mui-switch{
+	margin-right: 0;
+}
+i.must{
+    color: red;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}

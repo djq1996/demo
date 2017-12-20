@@ -1,0 +1,73 @@
+
+.tableBox{
+	background: #fff;
+}
+p{margin: 0;}
+.tableBox .t_head{
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #eaeaea;
+}
+.tableBox .t_head div{
+	float: left;
+	text-align: center;
+	/*border-right: 1px solid #eaeaea;*/
+	color: #000;
+	font-size: 15px;
+}
+.tableBox .t_head div:last-child{
+	border:0;
+}
+.tableBox .t_content .t_line{
+	border-bottom: 1px solid #eaeaea;
+}
+.tableBox .t_content .t_line>div{
+	float: left;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+} 
+.tableBox .t_content .t_line div{
+	/*border-right: 1px solid #eaeaea;*/
+	float: left;
+	font-size: 13px;
+	color: #000;
+}
+.tableBox .t_content .t_line div:last-child{
+	border:0;
+}
+.tableBox .t_content p{
+	font-size: 13px;
+}
+.w30{
+	width: 30%;
+}
+.w35{
+	width: 35%;
+}
+.w50{
+	width: 50%;
+	line-height: initial;
+	padding: 5.5px 0;
+}
+.w50 a.off{
+	color: #ccc;
+}
+ .colorO{
+	color: #f56140;
+}
+ .colorB{
+	color: #333;
+}
+ .colorD{
+	color: #999;
+}
+.mui-scroll-wrapper{
+	top: 44px;
+}
+.t_content > div:nth-child(odd){
+	background: rgba(247, 247, 247,.8);;
+}
+.t_content > div:nth-child(even){
+	background: rgba(239, 233, 233, 0.8);
+}

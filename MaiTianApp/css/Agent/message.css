@@ -1,0 +1,33 @@
+.rent-purchase {
+	width: 8.1rem;
+	line-height: 25px;
+	height: 26px;
+	margin: .5rem auto;
+	border: 1px solid #ff6633;
+	font-size: 14px;
+	color: #ff6633;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.rent-purchase a {
+	display: block;
+	float: left;
+	width: 4rem;
+}
+
+.rent-purchase a.active {
+	background: #ff6633;
+	color: #fff;
+}
+header a.read{
+	line-height: 44px;
+	font-size: 14px;
+}
+.mui-scroll-wrapper{
+	top: 44px;
+}
+.mui-media-body h2{
+	font-size: 14px;
+	font-weight: normal;
+}

@@ -1,0 +1,46 @@
+.mui-scroll-wrapper{
+	top: 44px;
+}
+#customerList{
+	border-top: 1px solid #ddd;
+}
+#customerList b{
+	font-weight: normal;
+	color: #000;
+	/*font-size:14px;*/
+}
+#customerList p{
+	margin-bottom: 0;
+	font-size: 12px;
+}
+#customerList li{
+	padding:6px 0 6px .3rem;
+}
+#customerList li:not(:last-child){
+	border-bottom: 1px solid #ddd;
+}
+#customerList li .customerImg{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 3px;
+}
+#customerList li .customerImg img{
+	width: 100%;
+}
+#customerList li .customerImg p{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size:18px;
+	color: #fff;
+}
+.customerDetail,.customerImg{
+	float: left;
+}
+.customerDetail{
+	width: 82%;
+	padding: 0 4px;
+}

@@ -1,0 +1,58 @@
+p{margin: 0;}
+.mui-bar .mui-btn{
+	background: #f56140;
+	color: #fff;
+}
+.mui-scroll-wrapper{
+	top: 44px;
+}
+.title{
+	border-bottom: 1px solid #eaeaea;
+}
+.title p{
+	line-height: 40px;
+	height: 40px;
+	background: #fff;
+	padding-left:15px;
+}
+.title p span{
+	color: #555;
+}
+.content{
+	background: #fff;
+	padding-left: 15px;
+	border-bottom: 1px solid #eaeaea;
+}
+.content h2{
+	font-size: 14px;
+	font-weight: normal;
+	color: #8f8f94;
+	line-height: 40px;
+	height: 40px;
+	margin: 0;
+}
+.content p{
+	padding: 0 20px;
+	line-height: 30px;
+}
+.content p span{
+	color: #555;
+}
+.remark{
+	background: #fff;
+	padding:0 0 10px 15px ;
+	border-bottom: 1px solid #eaeaea;
+}
+.remark h2{
+	font-size: 14px;
+	font-weight: normal;
+	color: #8f8f94;
+	line-height: 40px;
+	height: 40px;
+	margin: 0;
+}
+.remark p{
+	padding: 0 20px;
+	line-height: 30px;
+	color: #555;
+}

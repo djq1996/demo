@@ -1,0 +1,142 @@
+span.mui-pull-right i{
+	color: #000;
+	font-style: normal;
+}
+h4.title {
+    height: 30px;
+    /*background: rgba(221, 221, 221, 0.51);*/
+    margin: 0;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 30px;
+    padding: 0 .4rem;
+    color: #000;
+}
+.delMatching{
+	color: #FF6633;
+}
+#default .takeLookBox{
+	background: #fff;
+}
+#default .title{
+	padding: 0 15px;
+	border-bottom: 1px solid #eaeaea;
+}
+#default .title p{
+	color: #555;
+	float: left;
+	width: 50%;
+	margin: 0;
+	line-height: 40px;
+}
+#default .takeLookBox .mui-table-view-cell label,#default .addBox .mui-table-view-cell label{
+    color: #CCCCCC;
+    float: left;
+    width: 50%;
+    margin: 0;
+   	font-size: 14px;
+}
+#default .takeLookBox .mui-table-view-cell p,#default .addBox .mui-table-view-cell p{
+	padding-right: 17px;
+	width: 50%;
+	text-align: right;
+	color:#555;
+}
+#default .takeLookBox .mui-table-view-cell:after,#default .addBox .mui-table-view-cell:after{
+	left: 0;
+}
+
+
+#default .contentBox{
+	margin-top: 10px;
+	background: #fff;
+}
+#default .contentBox .remark label{
+	font-size: 14px;
+	width: 16%;
+	float: left;
+	padding-right: 0;
+}
+#default .contentBox .remark textarea{
+	float: left;
+	width: 80%;
+	border:1px solid #eaeaea;
+	font-size:14px;
+	padding-left: 5px;
+}
+#default .contentBox .remark{
+	padding: 5px 0;
+}
+#default .contentBox .result>label{
+	font-size: 14px;
+	width: 25%;
+	padding: 0;
+	padding-left: 15px;
+	line-height: 40px;
+}
+.mui-radio.mui-left label, .mui-checkbox.mui-left label{
+    padding: 0;
+    padding-left: 25px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+.mui-radio input[type='radio']:before{
+	font-size: 23px;
+}
+.mui-radio.mui-left input[type='radio']{
+	left: 0;
+}
+.mui-radio input[type='radio']{
+	    top: 50%;
+    transform: translateY(-50%);
+    width: 23px;
+    height: 23px;
+}
+.mui-radio input[type='radio']:checked:before, .mui-checkbox input[type='checkbox']:checked:before{
+	color: limegreen;
+}
+.mui-bar .mui-btn-block{
+	color: #fff;
+    background: #f56140;
+}
+.mui-bar-tab{
+	box-shadow: 1px -1px 1px #ccc;
+}
+#selHouse .mui-scroll-wrapper{
+	top: 55px;
+}
+
+.searchBox{
+	padding: 10px;
+}
+.searchBox .mui-col-xs-10 input{
+	margin: 0;
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+.searchBox .mui-col-xs-2 button{
+	background: #f56140;
+    color: #fff;
+    float: right;
+    border: 0;
+    height: 30px;
+}
+.historyBox h2{
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 40px;
+	padding: 0px 5px;
+	margin: 0;
+	background: #fff;
+	color: #ACACB4;
+}
+.historyBox .mui-table-view-cell:after{
+	left: 0;
+}
+.historyBox .mui-table-view-cell{
+	color: #555;
+	font-size: 14px;
+}

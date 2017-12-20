@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.css" rel="stylesheet" />
+    	<link rel="stylesheet" type="text/css" href="../../css/iconfont.css"/>
+    	<style type="text/css">
+    		.downbg{
+    			display: none;
+			    position: fixed;
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    z-index: 998;
+			    background-color: rgba(0,0,0,.5);
+			}
+			.offcanvasbg{
+    			display: none;
+			    position: fixed;
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    z-index: 998;
+			    background-color: rgba(0,0,0,.8);
+			}
+			.mui-bar .mui-icon{
+				color: #929292;
+			}
+			.mui-active .mui-icon{
+				color: #f56140;
+			}
+    	</style>
+	</head>
+	<body>
+		<div class="downbg"></div>
+		<div class="offcanvasbg"></div>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" id="statementManager">
+				<span class="mui-icon iconfont icon-tongji" style="font-size: 16px;"></span>
+				<span class="mui-tab-label">报表</span>
+			</a>
+			<a class="mui-tab-item " id="messageManager">
+				<span class="mui-icon iconfont icon-xiaoxi"></span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a class="mui-tab-item " id="customerListManager">
+				<span class="mui-icon iconfont icon-kehu"></span>
+				<span class="mui-tab-label">客户</span>
+			</a>
+		</nav>
+		<script src="../../js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+ 			mui.init({  
+                    subpages:[//先加载首页  
+                        {
+                         url:'_www/html/Manager/statement.html',  
+                          id:'statementManager',  
+                          styles:{  
+                            top:'0px',  
+                            bottom:'50px'  
+                          }  
+                        }  
+                    ],  
+                    preloadPages:[//缓存其他页面  
+                        {  
+                          url:'_www/html/Manager/message.html',  
+                          id:'messageManager',  
+                          styles:{  
+                            top:'0px',  
+                            bottom:'50px'  
+                          }  
+                        },  
+                        {  
+                          url:'_www/html/Manager/customerList.html',  
+                          id:'customerListManager',  
+                          styles:{
+                             top:'0px',  
+                            bottom:'50px'  
+                          }  
+                        }
+                        
+                    ]  
+                });  
+            mui.plusReady(function(){
+            	/*修改状态栏为白色*/
+//          	plus.navigator.setStatusBarStyle('light');
+                // 获取所有Webview窗口  
+                var winAll=plus.webview.all();//获取所有窗体  
+                mui("nav").on("tap","#statementManager",function(){//点击触发   
+                    plus.webview.getWebviewById("customerListManager").hide();
+                	plus.webview.getWebviewById("messageManager").hide();//这一步必须有  
+                    plus.webview.getWebviewById("statementManager").show();//这一步必须有   
+                });
+                mui("nav").on("tap","#customerListManager",function(){//点击触发  
+                   	plus.webview.getWebviewById("customerListManager").show();
+                }); 
+             	mui("nav").on("tap","#messageManager",function(){//点击触发  
+                    plus.webview.getWebviewById("messageManager").show();
+                }); 
+                mui("nav").on("tap","#statementManager",function(){//点击触发  
+                   	plus.webview.getWebviewById("statementManager").show();
+                });
+            });  
+		</script>
+	</body>
+</html>

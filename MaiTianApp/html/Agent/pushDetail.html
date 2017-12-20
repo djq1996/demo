@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>客户详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.css">
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/pushDetail.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav mui-badge-light-blue">
+			<span class="mui-action-back mui-icon mui-icon-left-nav"></span>
+			<h1 class="mui-title ">
+				客户详情
+		   </h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<button type="button" class="mui-btn mui-btn-block" id="pushMatchingHouseAgent">匹配房源</button>
+		</nav>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="title mui-row">
+						<div class="mui-col-xs-6">
+							<p>推送人姓名: <span>董建强</span></p>
+						</div>
+						<div class="mui-col-xs-6">
+							<p>电话: <span>13866889609</span></p>
+						</div>
+					</div>
+					<div class="content">
+						<h2>客户需求：</h2>
+						<div class="mui-row">
+							<div class="mui-col-xs-6">
+								<p>配套：<span>地铁，学区</span></p>
+							</div>
+							<div class="mui-col-xs-6">
+								<p>意向社区：<span>宣海</span></p>
+							</div>
+						</div>
+						<div class="mui-row">
+							<div class="mui-col-xs-12">
+								<p>居室需求：<span>两室一厅一厨一卫</span></p>
+							</div>
+						</div>
+						<div class="mui-row">
+							<div class="mui-col-xs-12">
+								<p>价位区间：<span>2000万</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="remark">
+						<h2>推送备注：</h2>
+						<p>客户不差钱，跪求多推送合适的房子</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script src="../../js/mui.js"></script>
+	<script type="text/javascript" src="../../js/common.js" ></script>
+	<script>
+		OpenNewPage("#pushMatchingHouseAgent","pushMatchingHouseAgent","_www/html/Agent/pushMatchingHouse.html")
+	</script>
+</html>

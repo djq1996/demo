@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>房源匹配</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/Agent/houseMatching.css"/>
+		<link rel="stylesheet" type="text/css" href="../../lib/icheck/red.css"/>
+		<style type="text/css">
+			.icheckbox_flat-red{
+				float: left;
+				margin: 25px 5px 0 0;
+			} 
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-action-back mui-icon mui-icon-left-nav"></span>
+			<h1 class="mui-title ">
+				<div class="rent-purchase">
+					<a class="transfer active">系统匹配</a>
+	      			<a class="lease">他人推荐</a>
+				</div>
+		    </h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<div>
+				<button type="button" class="mui-btn mui-btn-block" id="successPp">
+				匹配房源
+			    </button>
+			</div>
+		</nav>
+		<div class="mui-content">
+			<div class="screenBox">
+				<div class="mui-row">
+					<div class="mui-col-xs-3 ">
+						<p>房源属性</p><span class="mui-icon mui-icon-arrowdown"></span>
+						<ul style="display: none;">
+							<li>商业</li>
+							<li>住宅</li>
+						</ul>
+					</div>
+					<div class="mui-col-xs-3">
+						<p>被看量</p>
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-paixu_up"></use>
+						</svg>
+					</div>
+					<div class="mui-col-xs-3">
+						<p>面积</p>
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-paixu_up"></use>
+						</svg>
+					</div>
+					<div class="mui-col-xs-3">
+						<p>价格</p>
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-paixu_up"></use>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="bg"></div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view matching">
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;" class="mui-navigate-right">
+					        	<input type="checkbox" name="" class="mui-pull-left" />
+					            <img class="mui-media-object mui-pull-left" src="../../img/home.jpg">
+					            <div class="mui-media-body" id="homeDetailAgent">
+					               	<h2 class="mui-ellipsis"><span>宣海家园</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					                <p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					            	<span class="money"><i>200</i>万</span>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media">
+					        <a href="javascript:;" class="mui-navigate-right">
+					        	<input type="checkbox" name="" class="mui-pull-left" />
+					            <img class="mui-media-object mui-pull-left" src="../../img/home2.jpg">
+					            <div class="mui-media-body" id="homeDetailAgent">
+					               	<h2 class="mui-ellipsis"><span>幸福家园</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					                <p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					            	<span class="money"><i>189</i>万</span>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media" id="">
+					        <a href="javascript:;" class="mui-navigate-right">
+					        	<input type="checkbox" name="" class="mui-pull-left" />
+					            <img class="mui-media-object mui-pull-left" src="../../img/home3.jpg">
+					            <div class="mui-media-body" id="homeDetailAgent">
+					               	<h2 class="mui-ellipsis"><span>北京像素</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					                <p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					            	<span class="money"><i>98</i>万</span>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media" id="">
+					        <a href="javascript:;" class="mui-navigate-right">
+					        	<input type="checkbox" name="" class="mui-pull-left" />
+					            <img class="mui-media-object mui-pull-left" src="../../img/home.jpg">
+					            <div class="mui-media-body" id="homeDetailAgent">
+					               	<h2 class="mui-ellipsis"><span>宣海家园</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					                <p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					            	<span class="money"><i>200</i>万</span>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media" id="">
+					        <a href="javascript:;" class="mui-navigate-right">
+					        	<input type="checkbox" name="" class="mui-pull-left" />
+					            <img class="mui-media-object mui-pull-left" src="../../img/home2.jpg">
+					            <div class="mui-media-body" id="homeDetailAgent">
+					               	<h2 class="mui-ellipsis"><span>幸福家园</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					                <p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					            	<span class="money"><i>189</i>万</span>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media" id="">
+					        <a href="javascript:;" class="mui-navigate-right">
+					        	<input type="checkbox" name="" class="mui-pull-left" />
+					            <img class="mui-media-object mui-pull-left" src="../../img/home3.jpg">
+					            <div class="mui-media-body" id="homeDetailAgent">
+					               	<h2 class="mui-ellipsis"><span>北京像素</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					                <p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					            	<span class="money"><i>98</i>万</span>
+					            </div>
+					        </a>
+					    </li>
+					</ul>
+					<ul class="mui-table-view recommend" style="display: none;">
+					    <li class="mui-table-view-cell mui-media" id="homeDetailAgent">
+					        <a href="javascript:;" class="mui-navigate-right">
+					            <img class="mui-media-object mui-pull-left" src="../../img/home.jpg">
+					            <div class="mui-media-body">
+					               	<h2 class="mui-ellipsis"><span>宣海家园</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					               	<div class="mui-row">
+					               		<div class="mui-col-xs-7">
+					               			<p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					               			<span class="money"><i>200</i>万</span>
+					               		</div>
+					               		<div class="mui-col-xs-5">
+					               			<p>王大拿</p>
+					               			<p>7.8 12:17</p>
+					               		</div>
+					               	</div>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media" id="homeDetailAgent">
+					        <a href="javascript:;" class="mui-navigate-right">
+					            <img class="mui-media-object mui-pull-left" src="../../img/home2.jpg">
+					            <div class="mui-media-body">
+					               	<h2 class="mui-ellipsis"><span>幸福家园</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					                <div class="mui-row">
+					               		<div class="mui-col-xs-7">
+					               			<p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					               			<span class="money"><i>200</i>万</span>
+					               		</div>
+					               		<div class="mui-col-xs-5">
+					               			<p>董先生</p>
+					               			<p>7.8 12:17</p>
+					               		</div>
+					               	</div>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media" id="homeDetailAgent">
+					        <a href="javascript:;" class="mui-navigate-right">
+					            <img class="mui-media-object mui-pull-left" src="../../img/home3.jpg">
+					            <div class="mui-media-body">
+					               	<h2 class="mui-ellipsis"><span>北京像素</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					                <div class="mui-row">
+					               		<div class="mui-col-xs-7">
+					               			<p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					               			<span class="money"><i>200</i>万</span>
+					               		</div>
+					               		<div class="mui-col-xs-5">
+					               			<p>赵先生</p>
+					               			<p>7.8 12:17</p>
+					               		</div>
+					               	</div>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media" id="homeDetailAgent">
+					        <a href="javascript:;" class="mui-navigate-right">
+					            <img class="mui-media-object mui-pull-left" src="../../img/home.jpg">
+					            <div class="mui-media-body">
+					               	<h2 class="mui-ellipsis"><span>宣海家园</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					               	<div class="mui-row">
+					               		<div class="mui-col-xs-7">
+					               			<p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					               			<span class="money"><i>200</i>万</span>
+					               		</div>
+					               		<div class="mui-col-xs-5">
+					               			<p>王大拿</p>
+					               			<p>7.8 12:17</p>
+					               		</div>
+					               	</div>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media" id="homeDetailAgent">
+					        <a href="javascript:;" class="mui-navigate-right">
+					            <img class="mui-media-object mui-pull-left" src="../../img/home2.jpg">
+					            <div class="mui-media-body">
+					               	<h2 class="mui-ellipsis"><span>幸福家园</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					                <div class="mui-row">
+					               		<div class="mui-col-xs-7">
+					               			<p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					               			<span class="money"><i>200</i>万</span>
+					               		</div>
+					               		<div class="mui-col-xs-5">
+					               			<p>董先生</p>
+					               			<p>7.8 12:17</p>
+					               		</div>
+					               	</div>
+					            </div>
+					        </a>
+					    </li>
+					    <li class="mui-table-view-cell mui-media" id="homeDetailAgent">
+					        <a href="javascript:;" class="mui-navigate-right">
+					            <img class="mui-media-object mui-pull-left" src="../../img/home3.jpg">
+					            <div class="mui-media-body">
+					               	<h2 class="mui-ellipsis"><span>北京像素</span>&nbsp;<span>3号楼</span>#<span>4单元</span>#<span>1502</span></h2>
+					                <div class="mui-row">
+					               		<div class="mui-col-xs-7">
+					               			<p class='mui-ellipsis'><span>2室</span><span>1厅</span><span>1厨</span><span>1卫</span><span class="area">145㎡</span></p>
+					               			<span class="money"><i>200</i>万</span>
+					               		</div>
+					               		<div class="mui-col-xs-5">
+					               			<p>赵先生</p>
+					               			<p>7.8 12:17</p>
+					               		</div>
+					               	</div>
+					            </div>
+					        </a>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery-1.11.0.js"></script>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../lib/icheck/icheck.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			  $('input').iCheck({
+			    checkboxClass: 'icheckbox_flat-red',
+			    radioClass: 'iradio_flat-red'
+			  });
+			});
+		</script>
+	<script type="text/javascript">
+		mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+			});
+		OpenNewPage("#homeDetailAgent","homeDetailAgent","_www/html/Agent/homeDetail.html")
+		/*头部选项卡*/
+			$(".rent-purchase a").on('tap',function(){
+				$(this).addClass('active').siblings().removeClass('active');
+				if($(this).index()==1){
+					$(".recommend").show();
+					$(".matching").hide();
+				}else{
+					$(".recommend").hide();
+					$(".matching").show();
+				}
+			})
+		//下拉
+		$(".screenBox").on('tap','.mui-col-xs-3',function(){
+			$(this).find('p').css('color','#ff6633');
+			$(this).siblings().find('p').css('color','#8f8f94');
+			if($(this).index()==0){
+				if($(this).find('ul').is(':hidden')){
+					$(this).find('ul').slideDown(100);
+					$('.bg').show();
+				}else{
+					$(this).find('ul').slideUp(100);
+					$('.bg').hide();
+				}
+			}else{
+				$(".screenBox .mui-col-xs-3").find('ul').slideUp(100);
+				$('.bg').hide();
+			}
+		});
+		//点击遮罩层
+		$("body").on('tap','.bg',function(){
+			$(this).hide();
+			$(".screenBox .mui-col-xs-3:eq(0) ul").slideUp(100);
+		});
+		$(".screenBox").on('tap','.mui-col-xs-3:eq(0) ul li',function(){
+			var str=$(this).text();
+			$(this).parent().siblings('p').text(str);
+			$(this).parent().slideUp(100);
+			$(".bg").hide();
+		});
+		/*列表复选框选择禁止冒泡*/
+		$('#mui-table-view-cell').on('click','.icheckbox_flat-red',function(){
+			return false
+		})
+		/*匹配*/
+		$("#successPp").on('click',function(){
+			mui.toast('匹配成功')
+		})
+	</script>
+</html>
